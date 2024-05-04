@@ -27,6 +27,8 @@ class PagesController < ApplicationController
         content: "Discuss the benefits of app interpretation and offers guidance on how to remember and interpret chickens, including common themes and symbols."
       }
     ]
+    @reviews = Review.all
+    @islands = Island.all
   end
 
   def tac
