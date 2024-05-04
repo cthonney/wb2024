@@ -48,17 +48,83 @@ puts "Finished seeding users"
 
 
 #create island maurice
-i1 = Island.create!(name: "Maurice", latitude: -20.348404, longitude: 57.552152, address: "Maurice")
+i1 = Island.create!(
+  name: "Maurice",
+  latitude: -20.348404,
+  longitude: 57.552152,
+  address: "Maurice",
+  cul_diversity:"Known for its vibrant cultural mix, where French, English, and Creole blend in harmony.",
+  geo_features:"Famous for its stunning coral reefs, picturesque beaches, and iconic mountain peaks like Le Morne Brabant.",
+  access_transport:"Getting around is as easy as riding a giant tortoise – just watch out for traffic jams of dodos.",
+  practical_info:"Don't be surprised if you find yourself speaking Creole with an exaggerated French accent by the end of the trip.",
+  description:"Welcome to Mauritius, where azure waters meet vibrant cultures in a harmonious blend of paradise. Explore pristine beaches, lush landscapes, and a melting pot of languages and traditions that will leave you enchanted.",
+  title: "Mauritius: Where Paradise Meets Culture",
+)
 #create island reunion
-i2 = Island.create!(name: "Reunion", latitude: -21.115141, longitude: 55.536384, address: "Reunion")
+i2 = Island.create!(
+  name: "Reunion",
+  latitude: -21.115141,
+  longitude: 55.536384,
+  address: "Reunion",
+  cul_diversity:"Embrace the island's Creole culture while practicing your volcano dodging skills – the piton de la Fournaise might erupt at any moment!",
+  geo_features:"Prepare for jaw-dropping scenery, from towering peaks to lush forests and cascading waterfalls.",
+  access_transport:"Transportation on Reunion is like riding a rollercoaster – except the rollercoaster is a mountain road and the seats are on fire.",
+  practical_info:"Pack your hiking boots and your sense of adventure – you're going to need both to navigate Reunion's rugged terrain.",
+  description:"Discover the thrill of adventure on the island of Reunion, where rugged mountains, lush forests, and fiery volcanoes beckon explorers. Immerse yourself in a world of natural wonders and adrenaline-pumping experiences.",
+  title:"Reunion: Where Adventure Awaits",
+)
 #create island madagascar
-i3 = Island.create!(name: "Madagascar", latitude: -18.879190, longitude: 47.507905, address: "Madagascar")
+i3 = Island.create!(
+  name: "Madagascar",
+  latitude: -18.879190,
+  longitude: 47.507905,
+  address: "Madagascar",
+  cul_diversity:"A melting pot of cultures, languages, and traditions, where lemurs might teach you Malagasy and French or a new dance move.",
+  geo_features:"Home to unique flora and fauna, from baobab trees to playful crocodiles.",
+  access_transport:"Transportation options include hitching a ride on a passing zébu (strongly recommended).",
+  practical_info:"Bring your camera for wildlife spotting adventure and a pocket translator.",
+  description:"Step into a world of wonder on the island of Madagascar, where biodiversity thrives and adventure awaits at every turn. From lemurs to baobabs, prepare to be captivated by the island's unique wildlife and stunning landscapes.",
+  title:"Madagascar: Nature's Playground",
+)
 #create island seychelles
-i4 = Island.create!(name: "Seychelles", latitude: -4.679574, longitude: 55.491977, address: "Seychelles")
+i4 = Island.create!(
+  name: "Rodrigue",
+  latitude: -19.6744,
+  longitude: 63.4321,
+  address: "Rodrigue",
+  cul_diversity:"A linguistic mosaic where 'hello' is just the beginning of a conversation that might end with a sega dance-off.",
+  geo_features:"From turquoise lagoons to rugged cliffs, Rodrigues is Mother Nature's way of showing off – just don't forget to bring your snorkel and your hiking boots.",
+  access_transport:"Getting around Rodrigues is like playing 'The Amazing Race' – just hop on a bicycle and pedal like your life depends on it.",
+  practical_info:"Pack light and pack smart – you never know when you might need to outrun a giant crab or negotiate with a coconut crab for the best spot on the beach.",
+  description:"Escape to the tranquil paradise of Rodrigues, where turquoise lagoons, rugged cliffs, and laid-back vibes create the perfect setting for relaxation and adventure. Discover a world of natural beauty and warm hospitality on this idyllic island retreat.",
+  title:"Rodrigues: Island Serenity",
+)
 #create island comores
-i5 = Island.create!(name: "Comores", latitude: -11.645500, longitude: 43.333300, address: "Comores")
+i5 = Island.create!(
+  name: "Comores",
+  latitude: -11.645500,
+  longitude: 43.333300,
+  address: "Comores",
+  cul_diversity:"A vibrant cultural heritage with a blend of African, Arab, and French influences, reflected in its architecture, cuisine, and music.",
+  geo_features:"Explore volcanic islands, hidden beaches, and colorful coral reefs – just watch out for the occasional pirate ship.",
+  access_transport:"Need a lift? Try hitching a ride on a passing dolphin (dolphin training not provided).",
+  practical_info:"Don't be alarmed if your tour guide stops mid-sentence to take a selfie with a giant tortoise – it's just another day in paradise.",
+  description:"Journey to the enchanting islands of Comoros, where ancient traditions, lush landscapes, and untouched beauty transport you to a world untouched by time. Lose yourself in the rhythm of island life and discover the magic of Comoros.",
+  title:"Comoros: Where Time Stands Still",
+)
 #create island mayotte
-i6 = Island.create!(name: "Mayotte", latitude: -12.827500, longitude: 45.166244, address: "Mayotte")
+i6 = Island.create!(
+  name: "Mayotte",
+  latitude: -12.827500,
+  longitude: 45.166244,
+  address: "Mayotte",
+  cul_diversity:"Dive into the unique blend of French and Mahorian culture, where baguettes and coconut water are equally cherished.",
+  geo_features:"Discover coral reefs, lagoons, and lush forests, where turtles and dolphins play hide and seek.",
+  access_transport:"Transportation in Mayotte is a breeze – just ride the waves on a giant sea turtle (sea turtle rental not available).",
+  practical_info:"Don't be surprised if your taxi driver doubles as a guide and a DJ – Mayotte is full of surprises.",
+  description:"Escape to the tropical paradise of Mayotte, where crystal-clear waters, colorful coral reefs, and warm hospitality await. Dive into a world of underwater wonders and cultural delights on this hidden gem of the Indian Ocean.",
+  title:"Mayotte: Jewel of the Indian Ocean",
+)
 #end island
 puts "Finished seeding isdlands"
 
@@ -106,3 +172,6 @@ Review.create!(
   comment: "Incredible experience ! Lost few shoes on the way but at the didn’t need them as the beaches were calling us.",
   rating: 4
 )
+
+
+
