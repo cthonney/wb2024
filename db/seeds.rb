@@ -36,9 +36,9 @@ puts "Finished seeding isdlands"
 
 #create booking
 
-Booking.create!(start_date: "2024-05-01 00:00:00", end_date: "2024-05-10 00:00:00", user_id: 1, start_island_id: 1, end_island_id: 2)
-Booking.create!(start_date: "2024-05-01 00:00:00", end_date: "2024-05-10 00:00:00", user_id: 1, start_island_id: 2, end_island_id: 3)
-Booking.create!(start_date: "2024-05-01 00:00:00", end_date: "2024-05-10 00:00:00", user_id: 1, start_island_id: 3, end_island_id: 4)
-Booking.create!(start_date: "2024-05-01 00:00:00", end_date: "2024-05-10 00:00:00", user_id: 1, start_island_id: 4, end_island_id: 5)
-Booking.create!(start_date: "2024-05-01 00:00:00", end_date: "2024-05-10 00:00:00", user_id: 1, start_island_id: 5, end_island_id: 6)
+Booking.create!(start_date: "2024-05-01 00:00:00", user_id: 1, start_island_id: 1, end_island_id: 2)
+Booking.create!(start_date: "2024-05-01 00:00:00", user_id: 1, start_island_id: 2, end_island_id: 3)
+Booking.create!(start_date: "2024-05-01 00:00:00", user_id: 1, start_island_id: 3, end_island_id: 4)
+Booking.create!(start_date: "2024-05-01 00:00:00", user_id: 1, start_island_id: 4, end_island_id: 5)
+Booking.create!(start_date: "2024-05-01 00:00:00", user_id: 1, start_island_id: 5, end_island_id: 6)
 puts "Finished seeding bookings"

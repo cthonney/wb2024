@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get "blog", to: "pages#blog"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  resources :bookings, only: [:index, :show, :destroy, :update, :new] do
+  resources :bookings, only: [:index, :show, :destroy, :update, :new, :create] do
     member do
       get :payment
       get :show_qr
