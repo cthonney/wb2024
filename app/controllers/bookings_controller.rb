@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: [:show, :edit, :update, :destroy, :payment]
+  before_action :set_booking, only: [:show, :edit, :update, :destroy, :payment, :show_qr]
 
   def index
     @bookings = Booking.where(user: current_user)
@@ -28,6 +28,9 @@ class BookingsController < ApplicationController
   # custom routes
   def payment
 
+  end
+
+  def show_qr
   end
 
 

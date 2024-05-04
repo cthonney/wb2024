@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   resources :bookings, only: [:index, :show, :destroy, :update, :new] do
     member do
       get :payment
+      get :show_qr
       patch :accept
       patch :decline
     end
