@@ -253,6 +253,13 @@ main {
 
       .input-group-container {
         width: 87%;
+
+        .input-group {
+
+          &.second {
+            height: 38px;
+          }
+        }
       }
     }
   
