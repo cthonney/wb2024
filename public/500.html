@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>The page you were looking for doesn't exist (404)</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+    *{
+      transition: all 0.6s;
+    }
+
+    html {
+      height: 100%;
+    }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      color: #888;
+      margin: 0;
+    }
+
+    #main {
+      display: table;
+      width: 100%;
+      height: 100vh;
+      text-align: center;
+    }
+
+    .fof {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      vertical-align: middle;
+      margin-top: 10vh;
+
+    }
+
+    .fof h1 {
+      font-size: 50px;
+      display: inline-block;
+      padding-right: 12px;
+      animation: type .5s alternate infinite;
+    }
+
+    @keyframes type {
+      from {
+        box-shadow: inset -3px 0px 0px #888;
+      }
+
+      to {
+        box-shadow: inset -3px 0px 0px transparent;
+      }
+    }
+  </style>
+</head>
+
+<body class="">
+  <!-- This file lives in public/500.html -->
+  <div id="main">
+    <div class="fof">
+      <h1>Error 422</h1>
+      <!-- image tag -->
+      <img src="crazyc.png" alt="500">
+      <h2>The page you were looking for doesn't exist.</h2>
+      <!-- Link to homepage -->
+      <a href="/">Go to homepage</a>
+    </div>
+  </div>
+</body>
+
+</html>

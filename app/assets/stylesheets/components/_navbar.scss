@@ -1,0 +1,28 @@
+.navbar-chicken {
+  justify-content: space-between;
+  margin: .5% 3%;
+}
+
+.navbar-chicken .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-chicken .navbar-brand img {
+  width: 160px;
+}
+
+.navbar-chicken .nav-item .nav-link {
+  color: $white;
+  font-weight: 400;
+  transition: all 0.3s ease;
+  
+  &:hover {
+      transform: scale(1.1);
+      font-weight: bold;
+  }
+}
+
+.navbar-chicken .nav-item {
+  margin-left: 1em;
+}
+

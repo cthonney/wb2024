@@ -1,0 +1,59 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-chicken">
+  <div class="container-fluid">
+    <%= link_to "/", class: "navbar-brand" do %>
+      <%=image_tag("logo.svg", size: "50") %>
+    <% end %>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item active">
+            <%= link_to "Home", "/", class: "nav-link" %>
+        </li>
+        <li class="nav-item active">
+            <%= link_to "About", "/about", class: "nav-link" %>
+        </li>
+        <li class="nav-item active">
+            <%= link_to "Blog", "/blog", class: "nav-link" %>
+        </li>
+        <li class="nav-item active">
+            <%= link_to "Contact", "/contact", class: "nav-link" %>
+        </li>
+        <% if user_signed_in? %>
+
+          <li class="nav-item dropdown">
+
+          <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <% if current_user.avatar.attached? %>
+            <%= image_tag(current_user.avatar,
+                            class: "avatar") %>
+          <% else %>
+            <%= image_tag "logo.png", class: "avatar", alt: "dropdown menu" %>
+          <% end %>
+
+          </a>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+
+              <% if current_user.admin? %>
+                <%= link_to "Admin Platform", '/admin', class: "dropdown-item" %>
+              <% end %>
+              <%= link_to "Edit Profile", edit_user_registration_path, class: "dropdown-item" %>
+              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+            </div>
+          </li>
+          <% else %>
+          <li class="nav-item">
+            <%= link_to "Login", new_user_session_path, class: "nav-link secondary-cta-sign" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Sign up", new_user_registration_path, class: "nav-link main-cta-color-BonWup" %>
+          </li>
+        <% end %>
+
+      </ul>
+    </div>
+  </div>
+</div>

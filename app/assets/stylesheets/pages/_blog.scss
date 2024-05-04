@@ -1,0 +1,12 @@
+.blogs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 1rem;
+  max-width: 1000px;
+
+  .blog {
+    background-color: rgba(139, 136, 136, 0.4);
+    border: none;
+    margin: 10px;
+  }
+}
