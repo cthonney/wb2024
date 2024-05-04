@@ -1,17 +1,16 @@
 <div class="container-qr">
   <%= link_to "Back", bookings_path, class: "btn btn-primary" %>
-
 	<div class="ticket airline">
 		<div class="top">
 			<h1>Teleportation pass</h1>
 			<div class="big">
-				<p class="from">BWI</p>
-				<p class="to"><i class="fas fa-arrow-right"></i> SAN</p>
+				<p class="from"><%= @booking.start_island.abbreviation %></p>
+				<p class="to"><i class="fas fa-arrow-right"></i> <%= @booking.end_island.abbreviation %></p>
 			</div>
 			<div class="top--side">
 				<i class="fas fa-plane"></i>
-				<p>Baltimore</p>
-				<p>San Diego</p>
+				<p><%= @booking.start_island.assembly_point %></p>
+				<p><%= @booking.end_island.assembly_point %></p>
 			</div>
 		</div>
 		<div class="bottom">
