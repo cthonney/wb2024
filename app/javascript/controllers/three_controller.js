@@ -140,7 +140,7 @@ export default class extends Controller {
     const tick = () =>
     {
       const elapsedTime = clock.getElapsedTime()
-        points.rotation.y = elapsedTime * 0.01 // Rotating the points slightly each frame
+        points.rotation.y = elapsedTime += 0.1 // Rotating the points slightly each frame
 
         controls.minPolarAngle = 0;
         controls.maxPolarAngle =  0;
