@@ -66,6 +66,9 @@ gem "font-awesome-sass", "~> 6.1"
 gem "simple_form", github: "heartcombo/simple_form"
 gem "rails_admin", "3.0"
 
+# mapbox
+gem "geocoder"
+
 # Add Faraday gem
 gem "faraday"
 group :development, :test do
