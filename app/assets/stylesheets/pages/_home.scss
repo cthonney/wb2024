@@ -1,135 +1,27 @@
 // Specific CSS for your home-page
 $font_color: rgb(230, 237, 246);
+$font_color_dark: #1B1C1E;
 $font_main: "Open Sans";
 $color_main: #040720;
 $color_accent: #6184D8;
 $color_secondary: #EDAE49;
 $color_secondary_accent: #FF1654;
 
-@mixin grayscale($percent) {
-  -webkit-filter: grayscale($percent);
-  -moz-filter: grayscale($percent);
-  -ms-filter: grayscale($percent);
-  -o-filter: grayscale($percent);
-  filter: grayscale($percent);
-}
-
-@mixin gradient($deg, $a, $b, $c, $d) {
-  background: -moz-linear-gradient($deg, $a, $b, $c, $d);
-  background: -webkit-linear-gradient($deg, $a, $b, $c, $d);
-  background: linear-gradient($deg, $a, $b, $c, $d);
-}
-
-@mixin animate($animation, $time) {
-  -webkit-animation: $animation $time ease infinite;
-  -moz-animation: $animation $time ease infinite;
-  -o-animation: $animation $time ease infinite;
-  animation: $animation $time ease infinite;
-}
-
-@mixin transition($time) {
-  -webkit-transition: all $time ease-in-out;
-  transition: all $time ease-in-out;
-}
-
-@-webkit-keyframes gradient_transition {
-  0% {
-    top: 0;
-    left: 0;
-  }
-
-  50% {
-    top: -200%;
-    left: -200%;
-  }
-
-  100% {
-    top: 0;
-    left: 0;
-  }
-}
-
-@-moz-keyframes gradient_transition {
-  0% {
-    top: 0;
-    left: 0;
-  }
-
-  50% {
-    top: -200%;
-    left: -200%;
-  }
-
-  100% {
-    top: 0;
-    left: 0;
-  }
-}
-
-@-o-keyframes gradient_transition {
-  0% {
-    top: 0;
-    left: 0;
-  }
-
-  50% {
-    top: -200%;
-    left: -200%;
-  }
-
-  100% {
-    top: 0;
-    left: 0;
-  }
-}
-
-@keyframes gradient_transition {
-  0% {
-    top: 0;
-    left: 0;
-  }
-
-  50% {
-    top: -200%;
-    left: -200%;
-  }
-
-  100% {
-    top: 0;
-    left: 0;
-  }
-}
 
 .typed-cursor {
   display: none !important;
 }
 
 body.home {
-  color: $font_color;
+  color: $font_color_dark;
   font-weight: lighter;
-
-  &::before,
-  &::after {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -1;
-  }
-
-  &::after {
-    content: "";
-    width: 400%;
-    height: 400%;
-    opacity: 0.8;
-    @include gradient(-45deg, $color_secondary, $color_secondary_accent, $color_main, $color_accent);
-    @include animate(gradient_transition, 15s);
-  }
 }
 
 
 main .hero-left {
   width: 100%;
   margin: 5% 0;
+  color: $font_color_dark;
 
   @media only screen and (max-width: 1200px) {
     margin-bottom: 3.5rem;
@@ -152,7 +44,7 @@ main .hero-left {
 }
 
 main .hero-left .hero-left-content {
-  color: #FFFFFF;
+  color: $font_color_dark;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -202,7 +94,7 @@ main .hero-left .hero-left-content p {
 }
 
 main .hero-left .hero-left-content button {
-  color: #FFFFFF;
+  color: $font_color_dark;
   background-color: $light-gray;
   padding: 8px 16px;
   border-radius: 4px;
@@ -364,46 +256,6 @@ main {
     }
   }
 
-  .crazy {
-    margin: 4.5rem 0;
-
-    h2 {
-      font-size: 2.5rem;
-    }
-
-    .crazy-content-inside {
-      .crazy-text {
-        margin-bottom: 3.5rem;
-        background-color: $white;
-        border-radius: 10px;
-        padding: 5%;
-        color: $black;
-        margin-top: 2rem;
-
-        h3 {
-          font-size: 1.5rem;
-        }
-
-        p {
-          line-height: 1.6;
-        }
-      }
-
-      .crazy-text-2 {
-        background-color: none;
-        border: 3px solid $white;
-        padding: 5%;
-        border-radius: 10px;
-
-        .podcast {
-          iframe {
-            margin-top: 1rem;
-          }
-        }
-      }
-    }
-  }
-
   // Who is it for section style
 
   .oni-who {
@@ -467,32 +319,10 @@ main {
     }
   }
 
-  .cta-container {
-    border-radius: 10px;
-    background-color: $white;
-    margin: 3.5rem 0;
-
-    padding: 3% 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-bottom: 6%;
-
-    .cta-text-content {
-      h3 {
-        color: $primaryColor;
-        font-weight: 700;
-      }
-
-      p {
-        color: $black;
-      }
-    }
-  }
 
   .faq {
     margin-top: 7.5rem;
-    color: $white !important;
+    color: $font_color_dark !important;
 
     .faq-title {
       font-size: 2.5rem;
@@ -501,13 +331,13 @@ main {
 
     .accordion {
       --bs-accordion-bg: none !important;
-      color: $white !important;
+      color: $font_color_dark !important;
 
       .accordion-item {
         padding: 2% 0;
 
         .accordion-button {
-          color: $white !important;
+          color: $font_color_dark !important;
         }
 
         .accordion-header {
@@ -516,12 +346,12 @@ main {
         }
 
         .accordion-body {
-          color: $white !important;
+          color: $font_color_dark !important;
         }
 
         .accordion-button:not(.collapsed) {
           background-color: transparent !important;
-          color: $white !important;
+          color: $font_color_dark !important;
         }
 
         .accordion-button:focus {
@@ -529,22 +359,6 @@ main {
         }
       }
 
-    }
-  }
-}
-
-.crazys {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  .crazy {
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 10px;
-    color: #040720;
-    padding: 2rem;
-
-    p {
-      font-weight: 400;
     }
   }
 }

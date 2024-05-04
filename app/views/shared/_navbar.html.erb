@@ -8,11 +8,15 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <button class="btn btn-primary"
+    <%
+=begin%>
+ <button class="btn btn-primary"
       data-action="click->dark-mode#toggle"
     >
       Toggle Mode
-    </button>
+    </button> 
+<%
+=end%>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
@@ -23,7 +27,7 @@
             <%= link_to "About", "/about", class: "nav-link" %>
         </li>
         <li class="nav-item active">
-            <%= link_to "Blog", "/blog", class: "nav-link" %>
+            <%= link_to "My Teleportations", bookings_path, class: "nav-link" %>
         </li>
         <li class="nav-item active">
             <%= link_to "Contact", "/contact", class: "nav-link" %>

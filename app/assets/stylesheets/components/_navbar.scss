@@ -1,3 +1,7 @@
+$font_color: rgb(230, 237, 246);
+$font_color_dark: #1B1C1E;
+
+
 .navbar-chicken {
   justify-content: space-between;
   margin: .5% 3%;
@@ -12,7 +16,7 @@
 }
 
 .navbar-chicken .nav-item .nav-link {
-  color: $white;
+  color: $font_color_dark;
   font-weight: 400;
   transition: all 0.3s ease;
   
