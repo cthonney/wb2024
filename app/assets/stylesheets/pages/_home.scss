@@ -152,7 +152,7 @@ main {
                 list-style: none;
                 display: inline-flex;
                 margin-bottom: .4em;
-                
+
                 li:not(.first) {
                     margin-left: .2em;
                 }
@@ -226,6 +226,21 @@ main {
       outline: none !important;
       box-shadow: none;
       border-color: rgba(0,0,0,.125);
+    }
+  }
+}
+
+#booking-section {
+  background-color: hsla(0, 0%, 100%, 0.25);
+  padding: 1rem;
+  border-radius: 32px;
+
+  .booking-form {
+    display: flex;
+    flex-grow: 1;
+
+    .form-label {
+      margin-bottom: 0;
     }
   }
 }
