@@ -18,6 +18,9 @@
             label_method: :name,
             value_method: :id,
             include_blank: false %>
-            <%# island start %>
+  <%= f.input :adults, collection: 1..10 %>
+  <%= f.input :kids, collection: 0..10 %>
+  <%= f.input :pets, collection: 0..10 %>
+  <%= f.input :baggages, collection: 0..10 %>
   <%= f.button :submit, 'Send', class: 'btn main-cta-color-BonWup' %>
 <% end %>
