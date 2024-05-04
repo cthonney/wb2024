@@ -1,5 +1,6 @@
 const path    = require("path")
 const webpack = require("webpack")
+const TerserWebpackPlugin = require('terser-webpack-plugin'); // Import it
 
 module.exports = {
   mode: "production",
@@ -14,7 +15,14 @@ module.exports = {
   },
   plugins: [
     new webpack.optimize.LimitChunkCountPlugin({
-      maxChunks: 1
+      maxChunks: 10
     })
-  ]
+  ],
+  optimization: { // Add an optimization section
+    minimizer: [
+      new TerserWebpackPlugin({
+        // Optional: add Terser options here if desired
+      })
+    ]
+  }
 }

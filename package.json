@@ -11,6 +11,7 @@
     "gsap": "^3.12.5",
     "lil-gui": "^0.19.2",
     "mapbox-gl": "3.1.2",
+    "terser-webpack-plugin": "^5.3.10",
     "three": "^0.164.1",
     "typed.js": "^2.0.16",
     "webpack": "^5.82.0",
