@@ -21,6 +21,7 @@ body.home {
 main .hero-left {
   width: 100%;
   margin: 5% 0;
+  color: $font_color_dark;
 
   @media only screen and (max-width: 1200px) {
     margin-bottom: 3.5rem;
@@ -255,46 +256,6 @@ main {
     }
   }
 
-  .crazy {
-    margin: 4.5rem 0;
-
-    h2 {
-      font-size: 2.5rem;
-    }
-
-    .crazy-content-inside {
-      .crazy-text {
-        margin-bottom: 3.5rem;
-        background-color: $white;
-        border-radius: 10px;
-        padding: 5%;
-        color: $black;
-        margin-top: 2rem;
-
-        h3 {
-          font-size: 1.5rem;
-        }
-
-        p {
-          line-height: 1.6;
-        }
-      }
-
-      .crazy-text-2 {
-        background-color: none;
-        border: 3px solid $white;
-        padding: 5%;
-        border-radius: 10px;
-
-        .podcast {
-          iframe {
-            margin-top: 1rem;
-          }
-        }
-      }
-    }
-  }
-
   // Who is it for section style
 
   .oni-who {
@@ -358,32 +319,10 @@ main {
     }
   }
 
-  .cta-container {
-    border-radius: 10px;
-    background-color: $white;
-    margin: 3.5rem 0;
-
-    padding: 3% 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-bottom: 6%;
-
-    .cta-text-content {
-      h3 {
-        color: $primaryColor;
-        font-weight: 700;
-      }
-
-      p {
-        color: $black;
-      }
-    }
-  }
 
   .faq {
     margin-top: 7.5rem;
-    color: $white !important;
+    color: $font_color_dark !important;
 
     .faq-title {
       font-size: 2.5rem;
@@ -392,13 +331,13 @@ main {
 
     .accordion {
       --bs-accordion-bg: none !important;
-      color: $white !important;
+      color: $font_color_dark !important;
 
       .accordion-item {
         padding: 2% 0;
 
         .accordion-button {
-          color: $white !important;
+          color: $font_color_dark !important;
         }
 
         .accordion-header {
@@ -407,12 +346,12 @@ main {
         }
 
         .accordion-body {
-          color: $white !important;
+          color: $font_color_dark !important;
         }
 
         .accordion-button:not(.collapsed) {
           background-color: transparent !important;
-          color: $white !important;
+          color: $font_color_dark !important;
         }
 
         .accordion-button:focus {
@@ -420,22 +359,6 @@ main {
         }
       }
 
-    }
-  }
-}
-
-.crazys {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  .crazy {
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 10px;
-    color: #040720;
-    padding: 2rem;
-
-    p {
-      font-weight: 400;
     }
   }
 }
