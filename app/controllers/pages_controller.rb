@@ -2,6 +2,8 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!
 
   def home
+    @booking = Booking.new
+    @islands = Island.all
   end
 
   def about
@@ -25,6 +27,8 @@ class PagesController < ApplicationController
         content: "Discuss the benefits of app interpretation and offers guidance on how to remember and interpret chickens, including common themes and symbols."
       }
     ]
+    @reviews = Review.all
+    @islands = Island.all
   end
 
   def tac

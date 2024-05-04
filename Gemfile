@@ -95,3 +95,6 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+# reviews faker user
+gem 'faker'

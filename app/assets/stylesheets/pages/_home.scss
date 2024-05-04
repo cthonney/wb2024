@@ -1,6 +1,6 @@
 // Specific CSS for your home-page
-$font_color: rgb(230, 237, 246);
-$font_color_dark: #1B1C1E;
+$font_color: #FFFFFF;
+$font_color_dark: $black;
 $font_main: "Open Sans";
 $color_main: #040720;
 $color_accent: #6184D8;
@@ -13,15 +13,15 @@ $color_secondary_accent: #FF1654;
 }
 
 body.home {
-  color: $font_color_dark;
-  font-weight: lighter;
+  color: $font_color;
+  background-color: $ironBlack;
 }
 
 
 main .hero-left {
   width: 100%;
   margin: 5% 0;
-  color: $font_color_dark;
+  color: $font_color;
 
   @media only screen and (max-width: 1200px) {
     margin-bottom: 3.5rem;
@@ -44,10 +44,12 @@ main .hero-left {
 }
 
 main .hero-left .hero-left-content {
-  color: $font_color_dark;
+  color: $font_color;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  height: calc(100vh - 93px);
 
   @media only screen and (max-width: 1200px) {
     flex-direction: column-reverse;
@@ -56,6 +58,7 @@ main .hero-left .hero-left-content {
 
 main .hero-left .content-left {
   width: 55%;
+  min-width: 400px;
 
   @media only screen and (max-width: 1200px) {
     width: 100%;
@@ -94,7 +97,7 @@ main .hero-left .hero-left-content p {
 }
 
 main .hero-left .hero-left-content button {
-  color: $font_color_dark;
+  color: $font_color;
   background-color: $light-gray;
   padding: 8px 16px;
   border-radius: 4px;
@@ -149,7 +152,7 @@ main {
                 list-style: none;
                 display: inline-flex;
                 margin-bottom: .4em;
-                
+
                 li:not(.first) {
                     margin-left: .2em;
                 }
@@ -178,7 +181,7 @@ main {
 
   .faq {
     margin-top: 7.5rem;
-    color: $font_color_dark !important;
+    color: $font_color !important;
 
     .faq-title {
       font-size: 2.5rem;
@@ -187,13 +190,13 @@ main {
 
     .accordion {
       --bs-accordion-bg: none !important;
-      color: $font_color_dark !important;
+      color: $font_color !important;
 
       .accordion-item {
         padding: 1% 0;
 
         .accordion-button {
-          color: $font_color_dark !important;
+          color: $font_color !important;
         }
 
         .accordion-header {
@@ -202,12 +205,12 @@ main {
         }
 
         .accordion-body {
-          color: $font_color_dark !important;
+          color: $font_color !important;
         }
 
         .accordion-button:not(.collapsed) {
           background-color: transparent !important;
-          color: $font_color_dark !important;
+          color: $font_color !important;
         }
 
         .accordion-button:focus {
@@ -223,6 +226,21 @@ main {
       outline: none !important;
       box-shadow: none;
       border-color: rgba(0,0,0,.125);
+    }
+  }
+}
+
+#booking-section {
+  background-color: hsla(0, 0%, 100%, 0.25);
+  padding: 1rem;
+  border-radius: 32px;
+
+  .booking-form {
+    display: flex;
+    flex-grow: 1;
+
+    .form-label {
+      margin-bottom: 0;
     }
   }
 }
