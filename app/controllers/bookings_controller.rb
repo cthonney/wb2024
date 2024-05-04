@@ -9,7 +9,19 @@ class BookingsController < ApplicationController
     # @booking = Booking.find(params[:id])
   end
 
+
   def create
+    @booking = Booking.new(booking_params)
+    @booking.user = current_user
+    @booking.start_island = Island.find(params[:booking][:start_island_id])
+    @booking.end_island = Island.find(params[:booking][:end_island_id])
+    @booking.start_date = Date.strptime(params[:booking][:start_date], "%d/%m/%Y  %H:%M")
+    if @booking.save
+      redirect_to booking_path(@booking)
+    else
+      render :new
+    end
+
 
   end
 
@@ -17,6 +29,7 @@ class BookingsController < ApplicationController
     @island = Island.find(params[:island_id]) if params[:island_id]
     @islands = Island.all
     @booking = Booking.new
+
   end
 
   def update
@@ -37,7 +50,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date)
+    params.require(:booking).permit(:start_date, :start_island_id, :end_island_id,)
   end
 
   def set_booking
