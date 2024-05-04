@@ -15,14 +15,12 @@
 
   <body
     class="home"
-    data-controller="dark-mode"
-  ><%= render "shared/navbar" %>
-<%= render "shared/flashes" %>
-  <div class="container">
-    <%= yield %>
-  </div>
+    data-controller="dark-mode">
+    <%= render "shared/navbar" %>
+    <%= render "shared/flashes" %>
+    <div class="container">
+      <%= yield %>
+    </div>
+    <%= render "shared/footer" %>
   </body>
-  <footer>
-  <%= render "shared/footer" %>
-  </footer>
 </html>
