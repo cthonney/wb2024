@@ -10,75 +10,77 @@
         </section>
 
         <section id="booking-section">
-            <div class="booking-container">
-                <h2>Dial in your next Teleportation now.</h2>
-              <%= simple_form_for @booking do |f| %>
-                <div class="input-group-container">
-                    <div class="input-group gap-1">
-                    <%= f.input :start_date,
-                                as: :string,
-                                input_html: { data: { controller: "datepicker" },
-                                class: 'form-select'
-                                },
-                                wrapper_html: { class: 'mb-3 booking-form' },
-                                label_html: { class: 'input-group-text' }
-                    %>
-                                <%# island start %>
-                    <%= f.input :start_island_id,
-                                collection: Island.all,
-                                label_method: :name,
-                                value_method: :id,
-                                include_blank: false,
-                                wrapper_html: { class: 'mb-3 booking-form' },
-                                label_html: { class: 'input-group-text' },
-                                input_html: { class: 'form-select' }
-                    %>
-                                <%# island end %>
-                    <%# island end %>
-                    <%= f.input :end_island_id,
-                                collection: Island.all,
-                                label_method: :name,
-                                value_method: :id,
-                                include_blank: false,
-                                wrapper_html: { class: 'mb-3 booking-form' },
-                                label_html: { class: 'input-group-text' },
-                                input_html: { class: 'form-select' }
-                    %>
-                    </div>
-                    <div class="input-group second">
-                    <%= f.input :adults, collection: 1..10, selected: 1, wrapper_html: { class: 'mb-3 booking-form' },
-                    label_html: { class: 'input-group-text' },
-                    input_html: { class: 'form-select' }
-                    %>
-
-                    <%= f.input :kids, collection: 0..10, selected: 0,
-                    wrapper_html: { class: 'booking-form' },
-                    label_html: { class: 'input-group-text' },
-                    input_html: { class: 'form-select' }
-
-
-                    %>
-                    <%= f.input :baggages, collection: 0..10, selected: 0,
-                    wrapper_html: { class: 'booking-form' },
-                    label_html: { class: 'input-group-text' },
-                    input_html: { class: 'form-select' }
-                    %>
-                    <%= f.input :pets, collection: 0..10, selected: 0,
-                    wrapper_html: { class: 'booking-form' },
-                    label_html: { class: 'input-group-text' },
-                    input_html: { class: 'form-select' }
-                    %>
-
-                    </div>
+          <div class="booking-container">
+            <h2>Dial in your next Teleportation now.</h2>
+            <%= simple_form_for @booking do |f| %>
+              <div class="input-group-container">
+                <div class="input-group gap-1">
+                  <%= f.input :start_date,
+                              as: :string,
+                              input_html: { data: { controller: "datepicker" },
+                              class: 'form-select'
+                              },
+                              wrapper_html: { class: 'booking-form' },
+                              label_html: { class: 'input-group-text' }
+                  %>
+                  <%# island start %>
+                  <%= f.input :start_island_id,
+                              collection: Island.all,
+                              label_method: :name,
+                              value_method: :id,
+                              include_blank: false,
+                              wrapper_html: { class: 'booking-form' },
+                              label_html: { class: 'input-group-text' },
+                              input_html: { class: 'form-select' }
+                  %>
+                  <%# island end %>
+                  <%= f.input :end_island_id,
+                              collection: Island.all,
+                              label_method: :name,
+                              value_method: :id,
+                              include_blank: false,
+                              wrapper_html: { class: 'booking-form' },
+                              label_html: { class: 'input-group-text' },
+                              input_html: { class: 'form-select' }
+                  %>
                 </div>
-                <% if @show_checkbox_recaptcha %>
-        <%= recaptcha_tags %>
-      <% else %>
-        <%= recaptcha_v3(action: 'login', class: 'btn main-cta-color-BonWup-book', site_key: ENV['RECAPTCHA_SITE_KEY_V3']) %>
-      <% end %>
-        <%= f.button :submit, "Teleport", class: 'btn main-cta-color-BonWup-book' %>
-      </div>
-    <% end %>
+                <div class="input-group second">
+                  <%= f.input :adults, collection: 1..10, selected: 1, wrapper_html: { class: 'booking-form' },
+                  label_html: { class: 'input-group-text' },
+                  input_html: { class: 'form-select' }
+                  %>
+                  <%= f.input :kids, collection: 0..10, selected: 0,
+                  wrapper_html: { class: 'booking-form' },
+                  label_html: { class: 'input-group-text' },
+                  input_html: { class: 'form-select' }
+                  %>
+                  <%= f.input :baggages, collection: 0..10, selected: 0,
+                  wrapper_html: { class: 'booking-form' },
+                  label_html: { class: 'input-group-text' },
+                  input_html: { class: 'form-select' }
+                  %>
+                  <%= f.input :pets, collection: 0..10, selected: 0,
+                  wrapper_html: { class: 'booking-form' },
+                  label_html: { class: 'input-group-text' },
+                  input_html: { class: 'form-select' }
+                  %>
+                </div>
+              </div>
+
+              <% if user_signed_in? %>
+                <%= f.button :submit, 'Teleport', class: 'btn main-cta-color-BonWup-book' %>
+              <% else %>
+                <button
+                  type="button"
+                  class="btn main-cta-color-BonWup-book"
+                  data-bs-toggle="modal"
+                  data-bs-target="#loginModal"
+                >
+                  Teleport
+                </button>
+              <% end %>
+            <% end %>
+          </div>
         </section>
 
         <section id="about">
@@ -240,4 +242,25 @@
             </div>
         </section>
 
-    </main>
+</main>
+
+<% unless user_signed_in? %>
+  <!-- Modal -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded-4">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="loginModalLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
