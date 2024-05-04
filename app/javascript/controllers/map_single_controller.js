@@ -14,7 +14,8 @@ export default class extends Controller {
     this.map = new mapboxgl.Map({
       container: this.element,
       projection: "globe",
-      style: "mapbox://styles/mapbox/streets-v10",
+      style: "mapbox://styles/mapbox/satellite-streets-v12",
+      center: [50, 0]
     });
 
     this.map.on("style.load", () => {
@@ -25,14 +26,27 @@ export default class extends Controller {
         "space-color": "rgb(11, 11, 25)", // Background color
         "star-intensity": 0.6, // Background star brightness (default 0.35 at low zoooms )
       });
+
+      this.map.addSource("mapbox-dem", {
+        type: "raster-dem",
+        url: "mapbox://mapbox.terrain-rgb",
+      });
+
+      this.map.setTerrain({
+        source: "mapbox-dem",
+        exaggeration: 1.5,
+      });
+
+      // Add zoom and rotation controls to the map.
+      this.map.addControl(new mapboxgl.NavigationControl());
     });
 
     this.#addMarkerToMap();
-    console.log("Time", 4, 0.1);
     this.map.flyTo({
       center: [this.markerValue.lng, this.markerValue.lat],
-      zoom: 4,
-      speed: 0.1,
+      zoom: 8,
+      pitch: 45,
+      duration: 8000,
     });
   }
 
