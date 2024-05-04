@@ -69,9 +69,23 @@
                   %>
 
                 </div>
-                <%= f.button :submit, 'Send', class: 'btn main-cta-color-BonWup' %>
-              <% end %>
-            </div>
+
+                <div class="d-grid gap-2 d-flex">
+                  <div class="form-actions">
+                  <% if @show_checkbox_recaptcha %>
+                    <%= recaptcha_tags %>
+                  <% else %>
+                    <%= recaptcha_v3(action: 'login', class: 'btn main-cta-color', site_key: ENV['RECAPTCHA_SITE_KEY_V3']) %>
+                  <% end %>
+                    <%= f.button :submit, "Send", class: 'main-cta-color-BonWup' %>
+                  </div>
+               <% end %>
+
+
+
+
+
+
         </section>
 
         <section id="about">
@@ -229,5 +243,6 @@
                 </div>
             </div>
         </section>
+
 
     </main>
