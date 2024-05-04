@@ -1,0 +1,18 @@
+#island {
+  display: flex;
+  gap: 32px;
+  padding: 16px;
+  border-radius: 16px;
+  background-color: hsla(0, 0%, 100%, 0.3);
+  flex-grow: 1;
+  justify-content: space-between;
+  .description-island {
+    min-width: 200px;
+  }
+
+  .map-island {
+    width: clamp(200px, 50vw, 600px);
+    height: clamp(200px, 50vh, 600px);
+    border-radius: 16px;
+  }
+}

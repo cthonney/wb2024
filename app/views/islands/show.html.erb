@@ -1,8 +1,13 @@
-
-<div style="width: 100%; height: 600px;"
-  data-controller="map-single"
-  data-map-single-marker-value="<%= @marker.to_json %>"
-  data-map-single-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
->
+<div id="island">
+  <div class="description-island">
+    <h1>
+      <%= @island.name %>
+    </h1>
+  </div>
+  <div class="map-island"
+    data-controller="map-single"
+    data-map-single-marker-value="<%= @marker.to_json %>"
+    data-map-single-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+  >
+  </div>
 </div>
-
