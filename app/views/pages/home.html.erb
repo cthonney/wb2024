@@ -13,26 +13,62 @@
             <h2>Booking section</h2>
             <div class="booking-container">
               <%= simple_form_for @booking do |f| %>
-                <%= f.input :start_date,
-                          as: :string,
-                          input_html: { data: { controller: "datepicker" } } %>
-                          <%# island start %>
-                <%= f.input :start_island_id,
-                          collection: Island.all,
-                          label_method: :name,
-                          value_method: :id,
-                          include_blank: false %>
-                          <%# island end %>
-                <%# island end %>
-                <%= f.input :end_island_id,
-                          collection: Island.all,
-                          label_method: :name,
-                          value_method: :id,
-                          include_blank: false %>
-                <%= f.input :adults, collection: 1..10, selected: 1 %>
-                <%= f.input :kids, collection: 0..10, selected: 0 %>
-                <%= f.input :pets, collection: 0..10, selected: 0 %>
-                <%= f.input :baggages, collection: 0..10, selected: 0 %>
+                <div class="input-group gap-1">
+                  <%= f.input :start_date,
+                            as: :string,
+                            input_html: { data: { controller: "datepicker" },
+                            class: 'form-select'
+                            },
+                            wrapper_html: { class: 'mb-3 booking-form' },
+                            label_html: { class: 'input-group-text' }
+                  %>
+                            <%# island start %>
+                  <%= f.input :start_island_id,
+                            collection: Island.all,
+                            label_method: :name,
+                            value_method: :id,
+                            include_blank: false,
+                            wrapper_html: { class: 'mb-3 booking-form' },
+                            label_html: { class: 'input-group-text' },
+                            input_html: { class: 'form-select' }
+                  %>
+                            <%# island end %>
+                  <%# island end %>
+                  <%= f.input :end_island_id,
+                            collection: Island.all,
+                            label_method: :name,
+                            value_method: :id,
+                            include_blank: false,
+                            wrapper_html: { class: 'mb-3 booking-form' },
+                            label_html: { class: 'input-group-text' },
+                            input_html: { class: 'form-select' }
+                  %>
+                </div>
+                <div class="input-group gap-1">
+                  <%= f.input :adults, collection: 1..10, selected: 1, wrapper_html: { class: 'mb-3 booking-form' },
+                  label_html: { class: 'input-group-text' },
+                  input_html: { class: 'form-select' }
+                  %>
+
+                  <%= f.input :kids, collection: 0..10, selected: 0,
+                  wrapper_html: { class: 'mb-3 booking-form' },
+                  label_html: { class: 'input-group-text' },
+                  input_html: { class: 'form-select' }
+
+
+                  %>
+                  <%= f.input :baggages, collection: 0..10, selected: 0,
+                  wrapper_html: { class: 'mb-3 booking-form' },
+                  label_html: { class: 'input-group-text' },
+                  input_html: { class: 'form-select' }
+                  %>
+                  <%= f.input :pets, collection: 0..10, selected: 0,
+                  wrapper_html: { class: 'mb-3 booking-form' },
+                  label_html: { class: 'input-group-text' },
+                  input_html: { class: 'form-select' }
+                  %>
+
+                </div>
                 <%= f.button :submit, 'Send', class: 'btn main-cta-color-BonWup' %>
               <% end %>
             </div>
@@ -58,6 +94,7 @@
                         <i class="fa-sharp fa-solid fa-thought-bubble" style="color: #6184d8;"></i>
                         <h3><%= island.name %></h3>
                         <p>Lorem ipsum dolor sit. </p>
+                        <%= link_to island.name, island_path(island) %>
                     </article>
                   <% end %>
                 </div>
