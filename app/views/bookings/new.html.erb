@@ -1,6 +1,23 @@
+<%= current_user %>
+
+
 <%= simple_form_for @booking do |f| %>
   <%= f.input :start_date,
             as: :string,
             input_html: { data: { controller: "datepicker" } } %>
+            <%# island start %>
+  <%= f.input :start_island_id,
+            collection: Island.all,
+            label_method: :name,
+            value_method: :id,
+            include_blank: false %>
+            <%# island end %>
+  <%# island end %>
+  <%= f.input :end_island_id,
+            collection: Island.all,
+            label_method: :name,
+            value_method: :id,
+            include_blank: false %>
+            <%# island start %>
   <%= f.button :submit, 'Send', class: 'btn main-cta-color-BonWup' %>
 <% end %>
