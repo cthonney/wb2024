@@ -1,0 +1,17 @@
+.ecoindex-badge {
+  position: fixed; /* Positionnement fixe */
+  top: 50%; /* Positionnement vertical au milieu */
+  right: 2%; /* Positionnement horizontal à droite */
+  transform: translateY(-50%); /* Décalage vertical pour centrer le contenu */
+  z-index: 9999; /* Placer le composant au-dessus de tous les autres éléments */
+}
+
+.ecoindex-badge a {
+  display: block; /* Afficher le lien comme un bloc */
+  text-decoration: none; /* Supprimer le soulignement du lien */
+}
+
+.ecoindex-badge img {
+  display: block; /* Afficher l'image comme un bloc */
+  margin: 0 auto; /* Centrer l'image horizontalement */
+}
