@@ -2,6 +2,8 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!
 
   def home
+    @booking = Booking.new
+    @islands = Island.all
   end
 
   def about

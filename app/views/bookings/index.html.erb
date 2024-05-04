@@ -1,0 +1,32 @@
+<table class="table table-hover table-dark">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Date</th>
+      <th scope="col">Time</th>
+      <th scope="col">Start Island <i class="fa-solid fa-arrow-right"></i> End Island</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% counter = 1 %>
+    <% @bookings.each do |booking| %>
+      <tr>
+        <th scope="row"><%= counter %></th>
+        <td><%= booking.start_date.strftime("%B %d, %Y") unless booking.start_date.nil? %></td>
+        <td><%= booking.start_date.strftime("%H:%M") unless booking.start_date.nil? %></td>
+        <td>
+          <%= "#{booking.start_island.name} " %>
+          <i class="fa-solid fa-arrow-right">
+          </i><%= " #{booking.end_island.name}" %>
+        </td>
+        <td>
+          <%= link_to show_qr_booking_path(booking) do %>
+            <i class="fa-solid fa-eye"></i>
+          <% end %>
+        </td>
+      </tr>
+      <% counter += 1 %>
+    <% end %>
+  </tbody>
+</table>
