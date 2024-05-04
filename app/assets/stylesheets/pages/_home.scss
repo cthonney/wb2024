@@ -231,16 +231,55 @@ main {
 }
 
 #booking-section {
-  background-color: hsla(0, 0%, 100%, 0.25);
-  padding: 1rem;
-  border-radius: 32px;
+  margin: 4rem 0;
 
-  .booking-form {
-    display: flex;
-    flex-grow: 1;
+  .booking-container {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 2rem;
+    border-radius: 32px;
+  
+    h2 {
+      margin-bottom: 2rem;
+    }
 
-    .form-label {
-      margin-bottom: 0;
+    #new_booking {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .input-group-container {
+        width: 87%;
+      }
+    }
+  
+    .booking-form {
+      display: flex;
+      flex-grow: 1;
+      color: $font_color !important;
+  
+      .form-label {
+        margin-bottom: 0;
+      }
+
+      .form-control, .form-select {
+          background: rgba(255, 255, 255, 0.2);
+          color: $font_color !important;
+      }
+
+      .form-label {
+        background: rgba(255, 255, 255, 0.2);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        border-radius: 5px;
+        color: $font_color !important;
+      }
+      
+      .form-control:focus {
+          background: rgba(255, 255, 255, 0.2);
+      }
     }
   }
 }
