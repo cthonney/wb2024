@@ -15,7 +15,7 @@ module.exports = {
   },
   plugins: [
     new webpack.optimize.LimitChunkCountPlugin({
-      maxChunks: 10
+      maxChunks: 1
     })
   ],
   optimization: { // Add an optimization section
