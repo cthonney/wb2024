@@ -6,6 +6,7 @@
     "@hotwired/turbo-rails": "^7.3.0",
     "@popperjs/core": "^2.11.7",
     "bootstrap": "^5.2.3",
+    "flatpickr": "^4.6.13",
     "greensock": "^1.20.2",
     "gsap": "^3.12.5",
     "lil-gui": "^0.19.2",
