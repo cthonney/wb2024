@@ -128,6 +128,14 @@ button {
 }
 
 main {
+  #about {
+    margin: 4rem 0;
+    img {
+      height: 150px;
+      width: auto;
+    }
+  }
+
   #reviews {
       .reviews-container {
         display: flex;

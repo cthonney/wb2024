@@ -1,5 +1,5 @@
 import { Controller } from "@hotwired/stimulus";
-import mapboxgl from "mapbox-gl"; // Don't forget this!
+/* import mapboxgl from "mapbox-gl"; // Don't forget this! */
 
 // Connects to data-controller="map"
 export default class extends Controller {
