@@ -14,6 +14,12 @@
     line-height: 1;
 }
 
+.header-gradient {
+    background: -webkit-linear-gradient(-180deg, $primaryColor, $secondaryColor);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .secondary-header-style {
     color: $primaryColor;
     font-family: 'Open Sans', sans-serif;

@@ -129,10 +129,14 @@ button {
 
 main {
   #about {
-    margin: 4rem 0;
+    margin: 6rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     img {
       height: 150px;
       width: auto;
+      margin-bottom: 2rem;
     }
   }
 
