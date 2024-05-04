@@ -14,3 +14,13 @@
     <% end %>
   </div>
 </div>
+
+
+<%@reviews.each do |review| %>
+  <div class="review">
+    <p><strong>Teleporter:</strong> <%= review.booking.user.first_name%> <%= review.booking.user.last_name%></p>
+    <p><strong>Rating:</strong> <%= review.rating %>/5</p>
+    <p><strong>Comment:</strong> <%= review.comment %></p>
+    <p><strong>Island:</strong> <%= review.island.name%></p>
+  </div>
+<%end %>
