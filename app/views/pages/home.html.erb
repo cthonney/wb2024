@@ -71,8 +71,14 @@
 
                     </div>
                 </div>
-                <%= f.button :submit, 'Teleport', class: 'btn main-cta-color-BonWup-book' %>
-              <% end %>
+                <% if @show_checkbox_recaptcha %>
+        <%= recaptcha_tags %>
+      <% else %>
+        <%= recaptcha_v3(action: 'login', class: 'btn main-cta-color-BonWup-book', site_key: ENV['RECAPTCHA_SITE_KEY_V3']) %>
+      <% end %>
+        <%= f.button :submit, "Teleport", class: 'btn main-cta-color-BonWup-book' %>
+      </div>
+    <% end %>
             </div>
         </section>
 
