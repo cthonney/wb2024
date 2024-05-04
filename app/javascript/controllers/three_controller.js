@@ -2,17 +2,10 @@
 import { Controller } from "@hotwired/stimulus"
 import * as THREE from "three";
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
-import GUI from 'lil-gui'
-import gsap from 'gsap'
 
 export default class extends Controller {
   connect() {
-    console.log("Hey Jude, do not make it bad, take a sad song and make it better, remember to let it into your heart")
-   /**
-     * Base
-     */
-    // Debug
-    // const gui = new GUI({ width: 360})
+    console.log("Initializing three.js scene...")
 
     // Canvas
     const canvas = document.querySelector('canvas.webgl')
@@ -23,23 +16,23 @@ export default class extends Controller {
     /**
      * ------ Galaxy ------
      */
-    const parameters = {}
-    parameters.count = 100000
-    parameters.size = 0.01
-    parameters.radius = 3.22
-    parameters.branches = 5
-    parameters.spin = 2
-    parameters.randomness = 0.315
-    parameters.randomnessPower = 2.25
-    parameters.insideColor = '#9E68DD'
-    parameters.outsideColor = '#6BDAB0'
+    const parameters = {
+      count: 20000, // Reduced number of particles
+      size: 0.01,
+      radius: 3,
+      branches: 5,
+      spin: 2,
+      randomness: 0.315,
+      randomnessPower: 2.25,
+      insideColor: '#9E68DD',
+      outsideColor: '#6BDAB0'
+    }
 
     let geometry = null
     let material = null
     let points = null
 
     const generateGalaxy = () => {
-
         if (points !== null) {
             geometry.dispose()
             material.dispose()
@@ -78,9 +71,7 @@ export default class extends Controller {
             colors[i3 + 1] = mixedColor.g
             colors[i3 + 2] = mixedColor.b
         }
-        /**
-         * Geometry
-         */
+
         geometry.setAttribute(
             'position',
             new THREE.BufferAttribute(positions, 3)
@@ -91,9 +82,6 @@ export default class extends Controller {
             new THREE.BufferAttribute(colors, 3)
         )
 
-        /**
-         * Material
-         */
         material = new THREE.PointsMaterial({
             size: parameters.size,
             sizeAttenuation: true,
@@ -102,43 +90,23 @@ export default class extends Controller {
             vertexColors: true
         })
 
-        /**
-         * Points
-         */
         points = new THREE.Points(geometry, material)
         scene.add(points)
     }
     generateGalaxy()
 
-    // gui.add(parameters, 'count').min(100).max(1000000).step(100).onFinishChange(generateGalaxy)
-    // gui.add(parameters, 'size').min(0.001).max(0.1).step(0.001).onFinishChange(generateGalaxy)
-    // gui.add(parameters, 'radius').min(0.01).max(20).step(0.01).onFinishChange(generateGalaxy)
-    // gui.add(parameters, 'branches').min(2).max(20).step(1).onFinishChange(generateGalaxy)
-    // gui.add(parameters, 'spin').min(- 5).max(5).step(0.001).onFinishChange(generateGalaxy)
-    // gui.add(parameters, 'randomness').min(0).max(2).step(0.001).onFinishChange(generateGalaxy)
-    // gui.add(parameters, 'randomnessPower').min(1).max(10).step(0.001).onFinishChange(generateGalaxy)
-    // gui.addColor(parameters, 'insideColor').onFinishChange(generateGalaxy)
-    // gui.addColor(parameters, 'outsideColor').onFinishChange(generateGalaxy)
-
     /**
      * Sizes
      */
     const sizes = {
-        width: 600,
+        width: 700,
         height: 600
     }
 
     window.addEventListener('resize', () =>
     {
-        // Update sizes
-        // sizes.width = window.innerWidth
-        // sizes.height = window.innerHeight
-
-        // Update camera
         camera.aspect = sizes.width / sizes.height
         camera.updateProjectionMatrix()
-
-        // Update renderer
         renderer.setSize(sizes.width, sizes.height)
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
     })
@@ -146,12 +114,8 @@ export default class extends Controller {
     /**
      * Camera
      */
-    // Base camera
-    const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
-    camera.position.x = 3
-    camera.position.y = 3
-    camera.position.z = 3
-    scene.add(camera)
+    const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 10)
+    camera.position.set(3, 3, 3)
 
     // Controls
     const controls = new OrbitControls(camera, canvas)
@@ -170,29 +134,14 @@ export default class extends Controller {
     /**
      * Animate
      */
-    const clock = new THREE.Clock()
-
     const tick = () =>
     {
-        const elapsedTime = clock.getElapsedTime()
+        points.rotation.y += 0.01 // Rotating the points slightly each frame
 
-        points.rotation.y = 0
-        points.rotation.x = 0
-        points.rotation.y = elapsedTime * 0.1
-
-        // Update Color
-
-        // Update controls
-        controls.minPolarAngle = 0;
-        controls.maxPolarAngle =  0;
-        controls.enableZoom = false;
-      
         controls.update()
 
-        // Render
         renderer.render(scene, camera)
 
-        // Call tick again on the next frame
         window.requestAnimationFrame(tick)
     }
 
