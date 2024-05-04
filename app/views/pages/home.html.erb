@@ -2,11 +2,10 @@
         <section class="hero-left">
             <div class="hero-left-content">
                 <div class="content-left">
-                    <%# <canvas class="webgl"></canvas> %>
                     <h1>Isle Portal Indian Ocean</h1>
                     <p>Experience seamless island-hopping with our cutting-edge teleportation service, connecting you effortlessly and ecologically to the Indian Ocean islands .</p>
                 </div>
-                <%= image_tag "logo.svg", class: 'floating-logo' %>
+                <canvas class="webgl" data-controller="three"></canvas>
             </div>
         </section>
 
@@ -121,7 +120,7 @@
             <h2 class="faq-title">FAQ</h2>
             <div class="video-container">
                 <div style="padding:56.25% 0 0 0;position:relative;">
-                    <iframe src="https://player.vimeo.com/video/942759445?h=cb30828522&title=0&byline=0&portrait=0&autoplay=1&loop=1" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="https://player.vimeo.com/video/942759445?h=cb30828522&title=0&byline=0&portrait=0&loop=1" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
                 </div>
                     <script src="https://player.vimeo.com/api/player.js"></script>
             </div>
@@ -133,7 +132,7 @@
                         </button>
                     </h2>
                     <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                        <div class="accordion-body">
+                        <div class="accordion-body text-white">
                             Teleportation travel utilizes advanced technology to instantly transport individuals from one location of our location to another by dematerializing them at the starting point and rematerializing them at the destination.
                         </div>
                     </div>

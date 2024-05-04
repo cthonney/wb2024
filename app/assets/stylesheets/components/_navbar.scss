@@ -1,10 +1,17 @@
-$font_color: rgb(230, 237, 246);
+$font_color: #FFFFFF;
 $font_color_dark: #1B1C1E;
 
 
 .navbar-chicken {
   justify-content: space-between;
-  margin: .5% 3%;
+  margin: 1% 3%;
+  border-radius: 50px;
+  background-color: lightblue;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .navbar-chicken .navbar-collapse {
@@ -12,21 +19,28 @@ $font_color_dark: #1B1C1E;
 }
 
 .navbar-chicken .navbar-brand img {
-  width: 160px;
+  width: 65px;
 }
 
 .navbar-chicken .nav-item .nav-link {
-  color: $font_color_dark;
+  color: $font_color;
   font-weight: 400;
   transition: all 0.3s ease;
+
+  &.main-cta-color-BonWup {
+    padding: 20px 35px;
+  }
   
   &:hover {
-      transform: scale(1.1);
-      font-weight: bold;
+      transform: scale(1.05);
   }
 }
 
 .navbar-chicken .nav-item {
   margin-left: 1em;
+}
+
+.navbar-nav {
+  align-items: center;
 }
 
