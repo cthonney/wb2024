@@ -134,10 +134,17 @@ export default class extends Controller {
     /**
      * Animate
      */
+
+    const clock = new THREE.Clock()
+    
     const tick = () =>
     {
-        points.rotation.y += 0.01 // Rotating the points slightly each frame
+      const elapsedTime = clock.getElapsedTime()
+        points.rotation.y = elapsedTime * 0.01 // Rotating the points slightly each frame
 
+        controls.minPolarAngle = 0;
+        controls.maxPolarAngle =  0;
+        controls.enableZoom = false;
         controls.update()
 
         renderer.render(scene, camera)
