@@ -15,6 +15,22 @@
   </div>
 </div>
 
+<% @islands.each do |island| %>
+  <div class="description">
+    <h2><%= island.title %></h2>
+    <p><%= island.description %></p>
+  </div>
+
+  <div class="details">
+    <h2>Island Details</h2>
+    <p><strong>Address:</strong> <%= island.address %></p>
+    <p><strong>Cultural Diversity:</strong> <%= island.cul_diversity %></p>
+    <p><strong>Geographic Features:</strong> <%= island.geo_features %></p>
+    <p><strong>Accessibility and Transportation:</strong> <%= island.access_transport %></p>
+    <p><strong>Practical Information:</strong> <%= island.practical_info %></p>
+  </div>
+<% end %>
+
 
 <%@reviews.each do |review| %>
   <div class="review">

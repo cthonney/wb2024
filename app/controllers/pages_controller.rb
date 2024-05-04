@@ -26,6 +26,7 @@ class PagesController < ApplicationController
       }
     ]
     @reviews = Review.all
+    @islands = Island.all
   end
 
   def tac
