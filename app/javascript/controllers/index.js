@@ -7,6 +7,9 @@ import { application } from "./application"
 import DarkModeController from "./dark_mode_controller"
 application.register("dark-mode", DarkModeController)
 
+import DatepickerController from "./datepicker_controller"
+application.register("datepicker", DatepickerController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 

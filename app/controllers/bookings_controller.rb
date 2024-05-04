@@ -1,6 +1,8 @@
 class BookingsController < ApplicationController
+  before_action :set_booking, only: [:show, :edit, :update, :destroy, :payment]
+
   def index
-    # @bookings = Booking.all
+    @bookings = Booking.where(user: current_user)
   end
 
   def show
@@ -12,7 +14,9 @@ class BookingsController < ApplicationController
   end
 
   def new
-
+    @island = Island.find(params[:island_id]) if params[:island_id]
+    @islands = Island.all
+    @booking = Booking.new
   end
 
   def update
@@ -20,6 +24,12 @@ class BookingsController < ApplicationController
 
   def destroy
   end
+
+  # custom routes
+  def payment
+
+  end
+
 
   private
 
