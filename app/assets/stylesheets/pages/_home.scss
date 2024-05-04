@@ -1,6 +1,6 @@
 // Specific CSS for your home-page
-$font_color: rgb(230, 237, 246);
-$font_color_dark: #1B1C1E;
+$font_color: #FFFFFF;
+$font_color_dark: $black;
 $font_main: "Open Sans";
 $color_main: #040720;
 $color_accent: #6184D8;
@@ -14,6 +14,7 @@ $color_secondary_accent: #FF1654;
 
 body.home {
   color: $font_color_dark;
+  background-color: $ironBlack;
 }
 
 
