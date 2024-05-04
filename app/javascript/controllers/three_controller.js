@@ -139,18 +139,23 @@ export default class extends Controller {
     
     const tick = () =>
     {
-      const elapsedTime = clock.getElapsedTime()
-        points.rotation.y = elapsedTime * 0.01 // Rotating the points slightly each frame
+        const elapsedTime = clock.getElapsedTime()
 
-        controls.minPolarAngle = 0;
-        controls.maxPolarAngle =  0;
-        controls.enableZoom = false;
-        controls.update()
+            points.rotation.y = 0
+            points.rotation.x = 0
+            points.rotation.y = elapsedTime * 0.1
 
-        renderer.render(scene, camera)
+            // Update controls
+            controls.minPolarAngle = 0;
+            controls.maxPolarAngle =  0;
+            controls.enableZoom = false;
+            controls.update()
 
-        window.requestAnimationFrame(tick)
-    }
+            // Render
+            renderer.render(scene, camera)
+
+            window.requestAnimationFrame(tick)
+            }
 
     tick()
   }
