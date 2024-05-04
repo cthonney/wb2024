@@ -10,5 +10,8 @@ application.register("dark-mode", DarkModeController)
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
+import MapController from "./map_controller"
+application.register("map", MapController)
+
 import ThreeController from "./three_controller"
 application.register("three", ThreeController)
