@@ -190,7 +190,7 @@ main {
       color: $font_color_dark !important;
 
       .accordion-item {
-        padding: 2% 0;
+        padding: 1% 0;
 
         .accordion-button {
           color: $font_color_dark !important;
@@ -215,6 +215,14 @@ main {
         }
       }
 
+    }
+
+    .accordion-item, .accordion-item:focus, .accordion-item:active,
+    .accordion-header, .accordion-header:focus, .accordion-header:active,
+    .accordion-button, .accordion-button:focus, .accordion-button:active {
+      outline: none !important;
+      box-shadow: none;
+      border-color: rgba(0,0,0,.125);
     }
   }
 }
