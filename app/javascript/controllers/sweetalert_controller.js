@@ -12,12 +12,12 @@ export default class extends Controller {
   // Connects to data-action="click->sweetalert#showAlert"
   showAlert() {
     Swal.fire({
-      title: "Hello from Stimulus!",
-      text: "This is a SweetAlert2 modal.",
+      title: "Payment Successful",
+      text: "The payment has been done successfully.",
       icon: "success",
-      confirmButtonText: "Cool!",
+      confirmButtonText: "Confirm Payment",
       // When the user confirms the modal, send the user to /bookings
-      confirmButtonColor: "#4CAF50",
+      confirmButtonColor: "#6BDAB0",
       allowOutsideClick: false,
     }).then((result) => {
       if (result.isConfirmed) {
