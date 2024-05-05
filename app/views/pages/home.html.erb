@@ -102,9 +102,9 @@
                 <% @islands.each do |island| %>
                 <article class="island-card">
                     <i class="fa-sharp fa-solid fa-thought-bubble" style="color: #6184d8;"></i>
-                    <h3><%= island.name %></h3>
+                    <h3><i class="fa-solid fa-arrow-right"></i><%= island.name %></h3>
                     <p><%= island.title %></p>
-                    <%= link_to island.name, island_path(island), class: "btn main-cta-color-BonWup" %>
+                    <%= link_to "Discover #{island.name}", island_path(island), class: "btn main-cta-color-BonWup isl w-100" %>
                 </article>
                 <% end %>
             </div>
