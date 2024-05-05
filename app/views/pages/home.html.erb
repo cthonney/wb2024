@@ -3,7 +3,7 @@
             <div class="hero-left-content">
                 <div class="content-left">
                     <h1 class="header-gradient">Isle Portal Indian Ocean</h1>
-                    <p>Experience seamless island-hopping with our cutting-edge teleportation service, connecting you effortlessly and ecologically to the Indian Ocean islands .</p>
+                    <p>Experience seamless island-hopping with our cutting-edge teleportation service, connecting you effortlessly and ecologically to the Indian Ocean islands.</p>
                 </div>
                 <canvas class="webgl" data-controller="three"></canvas>
             </div>
@@ -11,7 +11,7 @@
 
         <section id="booking-section">
             <div class="booking-container">
-                <h2 class="header-gradient">Dial in your next Teleportation now.</h2>
+                <h2 class="header-gradient">Schedule Your Teleport Trip Now</h2>
                 <%= simple_form_for @booking do |f| %>
                     <div class="input-group-container">
                         <div class="input-group gap-1">
@@ -90,20 +90,20 @@
                 <p>Welcome to Isle Portal teleportation service, where we make the impossible, possible! Say goodbye to long hours of travel and hello to instant connections with loved ones, emergency assistance, seamless medical visits, and unforgettable island explorations.</p>
                 <p>With Isle Portal, every journey becomes a joyous adventure, as we whisk you away to your destination in the blink of an eye.</p>
                 <p>Join us and embrace the magic of teleportation for all your travel needs – because life's too short for waiting!</p>
-                <a href="#" class="tele-btn">Teleport Now</a>
+                <a href="#booking-section" class="tele-btn">Teleport Now</a>
             </div>
             <%=image_tag("logo-full.svg") %>
         </section>
 
         <section id="islands" >
-            <h2 class="header-gradient">Featured Islands</h2>
+            <h2 class="header-gradient">Indian Ocean Gems - All Just A Teleport Way</h2>
             <div class="islands-card-container">
 
                 <% @islands.first(3).each do |island| %>
                 <article class="island-card">
                     <i class="fa-sharp fa-solid fa-thought-bubble" style="color: #6184d8;"></i>
                     <h3><%= island.name %></h3>
-                    <p>Lorem ipsum dolor sit. </p>
+                    <p><%= island.title %></p>
                     <%= link_to island.name, island_path(island), class: "btn main-cta-color-BonWup" %>
                 </article>
                 <% end %>
@@ -111,21 +111,21 @@
         </section>
 
         <section id="advantages">
-            <h2 class="header-gradient">The Fast, Flexible, and Hassle-Free Way to Travel</h2>
+            <h2 class="header-gradient">Every Island Paradise Within Reach With Isle Portal !</h2>
             <div class="adv-container">
                 <div class="adv-card">
                     <i class="fa-solid fa-gauge-high"></i>
-                    <h4>Time Efficiency</h4>
+                    <h4>Time-Saving</h4>
                 </div>
 
                 <div class="adv-card">
                     <i class="fa-solid fa-globe"></i>
-                    <h4>Versatile Travel</h4>
+                    <h4>Travel Anywhere</h4>
                 </div>
 
                 <div class="adv-card">
                     <i class="fa-solid fa-bridge"></i>
-                    <h4>Instant Bridge</h4>
+                    <h4>Cultural Bridge</h4>
                 </div>
 
                 <div class="adv-card">
@@ -134,7 +134,7 @@
                 </div>
             </div>
             <div class="adv-btn-container">
-                <a href="#" class="adv-btn">Teleport Now</a>
+                <a href="#booking-section" class="adv-btn">Teleport Now</a>
             </div>
         </section>
 
@@ -180,7 +180,7 @@
         </section>
 
         <section class="faq">
-            <h2 class="faq-title header-gradient">FAQ</h2>
+            <h2 class="faq-title header-gradient">Teleportation 101: Your Burning Questions</h2>
             <div class="video-container">
                 <div style="padding:56.25% 0 0 0;position:relative;">
                     <iframe loading="lazy" src="https://player.vimeo.com/video/942759445?h=cb30828522&title=0&byline=0&portrait=0&loop=1" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
