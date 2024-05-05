@@ -11,13 +11,15 @@
       <%= f.input :name, label: 'Full name' %>
       <%= f.input :email, label: 'Email' %>
       <%= f.input :message, label: 'Message', as: :text %>
-      <% if @show_checkbox_recaptcha %>
-        <%= recaptcha_tags %>
-      <% else %>
-        <%= recaptcha_v3(action: 'login', class: 'btn main-cta-color', site_key: ENV['RECAPTCHA_SITE_KEY_V3']) %>
-      <% end %>
-        <%= f.button :submit, "Submit Your Request", class: 'btn main-cta-color-BonWup' %>
-      </div>
-    <% end %>
+      <div class="form-actions">
+  <% if @show_checkbox_recaptcha %>
+    <%= recaptcha_tags %>
+  <% else %>
+    <%= recaptcha_v3(action: 'login', site_key: ENV['RECAPTCHA_SITE_KEY_V3']) %>
+  <% end %>
+    <%= f.button :submit, "Submit your request", class: "btn main-cta-color-BonWup" %>
+  </div>
+<% end %>
+
   </div>
 </div>
