@@ -1,0 +1,16 @@
+    <%= f.input :start_island_id,
+              collection: Island.all,
+              label_method: :name,
+              value_method: :id,
+              include_blank: false,
+              selected: @island.id,
+              disabled: true,
+              readonly: true
+              %>
+              <%# island end %>
+    <%# island end %>
+    <%= f.input :end_island_id,
+              collection: Island.all,
+              label_method: :name,
+              value_method: :id,
+              include_blank: false %>
