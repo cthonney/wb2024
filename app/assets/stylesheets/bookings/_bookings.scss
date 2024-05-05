@@ -1,0 +1,13 @@
+.booking-table-container {
+    height: 60vh;
+
+    #booking-table {
+        padding: 1rem;
+        border-radius: 20px;
+        color: $font_color !important;
+
+        i {
+            color: #929292 !important;
+        }
+    }
+}
