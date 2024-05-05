@@ -88,10 +88,10 @@ i3 = Island.create!(
 )
 #create island seychelles
 i4 = Island.create!(
-  name: "Rodrigue 🇸🇨",
+  name: "Rodrigues 🇸🇨",
   latitude: -19.6744,
   longitude: 63.4321,
-  address: "Anse Mourouk, Rodrigue",
+  address: "Anse Mourouk, Rodrigues",
   cul_diversity:"A linguistic mosaic where 'hello' is just the beginning of a conversation that might end with a sega dance-off.",
   geo_features:"From turquoise lagoons to rugged cliffs, Rodrigues is Mother Nature's way of showing off – just don't forget to bring your snorkel and your hiking boots.",
   access_transport:"Getting around Rodrigues is like playing 'The Amazing Race' – just hop on a bicycle and pedal like your life depends on it.",
