@@ -1,4 +1,5 @@
 #island {
+  position: relative;
   display: flex;
   gap: 32px;
   padding: 16px;
@@ -8,11 +9,29 @@
   justify-content: space-between;
   .description-island {
     min-width: 200px;
+    width: 66%;
   }
 
   .map-island {
-    width: clamp(200px, 50vw, 600px);
+    width: clamp(200px, 33%, 600px);
     height: clamp(200px, 50vh, 600px);
     border-radius: 16px;
+  }
+
+  .back-btn {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    top: 0;
+    left: -80px;
+    justify-content: center;
+
+    .fa-arrow-left {
+      font-size: 1.5rem;
+    }
   }
 }

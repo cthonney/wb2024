@@ -1,9 +1,22 @@
-<script src='https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.js' data-turbolinks-track>></script>
+<script src='https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.js' data-turbolinks-track></script>
 <div id="island">
+  <%= link_to :back, class:"back-btn btn btn-primary" do %>
+    <i class="fa-solid fa-arrow-left"></i>
+  <% end %>
+
   <div class="description-island">
     <h1>
       <%= @island.name %>
     </h1>
+    <p>
+      <%= @island.description %>
+    </p>
+    <p>
+      <%= @island.access_transport %>
+    </p>
+    <p>
+      <%= @island.practical_info %>
+    </p>
   </div>
   <div class="map-island"
     data-controller="map-single"
