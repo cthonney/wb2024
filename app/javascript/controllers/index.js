@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import AnimController from "./anim_controller"
+application.register("anim", AnimController)
+
 import DarkModeController from "./dark_mode_controller"
 application.register("dark-mode", DarkModeController)
 
