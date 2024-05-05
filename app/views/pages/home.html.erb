@@ -99,7 +99,7 @@
             <h2 class="header-gradient">Featured Islands</h2>
             <div class="islands-card-container">
 
-                <% @islands.first(3).each do |island| %>
+                <% @islands.each do |island| %>
                 <article class="island-card">
                     <i class="fa-sharp fa-solid fa-thought-bubble" style="color: #6184d8;"></i>
                     <h3><%= island.name %></h3>
