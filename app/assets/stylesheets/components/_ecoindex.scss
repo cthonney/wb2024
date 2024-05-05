@@ -1,7 +1,7 @@
 .ecoindex-badge {
   position: fixed; /* Positionnement fixe */
   bottom: 1%; /* Positionnement vertical au milieu */
-  right: 1%; /* Positionnement horizontal à droite */
+  left: 1%; /* Positionnement horizontal à droite */
   transform: translateY(-50%); /* Décalage vertical pour centrer le contenu */
   z-index: 9999; /* Placer le composant au-dessus de tous les autres éléments */
 }

@@ -2,7 +2,7 @@
         <section class="hero-left">
             <div class="hero-left-content">
                 <div class="content-left">
-                    <h1>Isle Portal Indian Ocean</h1>
+                    <h1 class="header-gradient">Isle Portal Indian Ocean</h1>
                     <p>Experience seamless island-hopping with our cutting-edge teleportation service, connecting you effortlessly and ecologically to the Indian Ocean islands .</p>
                 </div>
                 <canvas class="webgl" data-controller="three"></canvas>
@@ -10,62 +10,63 @@
         </section>
 
         <section id="booking-section">
-          <div class="booking-container">
-            <h2>Dial in your next Teleportation now.</h2>
-            <%= simple_form_for @booking do |f| %>
-              <div class="input-group-container">
-                <div class="input-group gap-1">
-                  <%= f.input :start_date,
-                              as: :string,
-                              input_html: { data: { controller: "datepicker" },
-                              class: 'form-select'
-                              },
-                              wrapper_html: { class: 'booking-form' },
-                              label_html: { class: 'input-group-text' }
-                  %>
-                  <%# island start %>
-                  <%= f.input :start_island_id,
-                              collection: Island.all,
-                              label_method: :name,
-                              value_method: :id,
-                              include_blank: false,
-                              wrapper_html: { class: 'booking-form' },
-                              label_html: { class: 'input-group-text' },
-                              input_html: { class: 'form-select' }
-                  %>
-                  <%# island end %>
-                  <%= f.input :end_island_id,
-                              collection: Island.all,
-                              label_method: :name,
-                              value_method: :id,
-                              include_blank: false,
-                              wrapper_html: { class: 'booking-form' },
-                              label_html: { class: 'input-group-text' },
-                              input_html: { class: 'form-select' }
-                  %>
+            <div class="booking-container">
+                <h2 class="header-gradient">Dial in your next Teleportation now.</h2>
+                <%= simple_form_for @booking do |f| %>
+                    <div class="input-group-container">
+                        <div class="input-group gap-1">
+                            <%= f.input :start_date,
+                                        as: :string,
+                                        input_html: { data: { controller: "datepicker" },
+                                        class: 'form-select'
+                                        },
+                                        wrapper_html: { class: 'booking-form' },
+                                        label_html: { class: 'input-group-text' }
+                            %>
+                                        <%# island start %>
+                            <%= f.input :start_island_id,
+                                        collection: Island.all,
+                                        label_method: :name,
+                                        value_method: :id,
+                                        include_blank: false,
+                                        wrapper_html: { class: 'booking-form' },
+                                        label_html: { class: 'input-group-text' },
+                                        input_html: { class: 'form-select' }
+                            %>
+                                        <%# island end %>
+                            <%# island end %>
+                            <%= f.input :end_island_id,
+                                        collection: Island.all,
+                                        label_method: :name,
+                                        value_method: :id,
+                                        include_blank: false,
+                                        wrapper_html: { class: 'booking-form' },
+                                        label_html: { class: 'input-group-text' },
+                                        input_html: { class: 'form-select' }
+                            %>
+                        </div>
+                        <div class="input-group second">
+                            <%= f.input :adults, collection: 1..10, selected: 1, wrapper_html: { class: 'booking-form' },
+                            label_html: { class: 'input-group-text' },
+                            input_html: { class: 'form-select' }
+                            %>
+                            <%= f.input :kids, collection: 0..10, selected: 0,
+                            wrapper_html: { class: 'booking-form' },
+                            label_html: { class: 'input-group-text' },
+                            input_html: { class: 'form-select' }
+                            %>
+                            <%= f.input :baggages, collection: 0..10, selected: 0,
+                            wrapper_html: { class: 'booking-form' },
+                            label_html: { class: 'input-group-text' },
+                            input_html: { class: 'form-select' }
+                            %>
+                            <%= f.input :pets, collection: 0..10, selected: 0,
+                            wrapper_html: { class: 'booking-form' },
+                            label_html: { class: 'input-group-text' },
+                            input_html: { class: 'form-select' }
+                            %>
+                        </div>
                 </div>
-                <div class="input-group second">
-                  <%= f.input :adults, collection: 1..10, selected: 1, wrapper_html: { class: 'booking-form' },
-                  label_html: { class: 'input-group-text' },
-                  input_html: { class: 'form-select' }
-                  %>
-                  <%= f.input :kids, collection: 0..10, selected: 0,
-                  wrapper_html: { class: 'booking-form' },
-                  label_html: { class: 'input-group-text' },
-                  input_html: { class: 'form-select' }
-                  %>
-                  <%= f.input :baggages, collection: 0..10, selected: 0,
-                  wrapper_html: { class: 'booking-form' },
-                  label_html: { class: 'input-group-text' },
-                  input_html: { class: 'form-select' }
-                  %>
-                  <%= f.input :pets, collection: 0..10, selected: 0,
-                  wrapper_html: { class: 'booking-form' },
-                  label_html: { class: 'input-group-text' },
-                  input_html: { class: 'form-select' }
-                  %>
-                </div>
-              </div>
 
               <% if user_signed_in? %>
                 <%= f.button :submit, 'Teleport', class: 'btn main-cta-color-BonWup-book' %>
@@ -84,66 +85,64 @@
         </section>
 
         <section id="about">
-            <%=image_tag("logo-full.svg") %>
             <div class="about-text">
-                <h2>Unlock Your Island Adventures: Plan Your Teleportation Journey Today!</h2>
+                <h2 class="header-gradient">Unlock Your Island Adventures:<br>Plan Your Teleportation Journey Today!</h2>
                 <p>Welcome to Isle Portal teleportation service, where we make the impossible, possible! Say goodbye to long hours of travel and hello to instant connections with loved ones, emergency assistance, seamless medical visits, and unforgettable island explorations.</p>
-                <br>
                 <p>With Isle Portal, every journey becomes a joyous adventure, as we whisk you away to your destination in the blink of an eye.</p>
-                <br>
                 <p>Join us and embrace the magic of teleportation for all your travel needs – because life's too short for waiting!</p>
                 <a href="#" class="tele-btn">Teleport Now</a>
             </div>
+            <%=image_tag("logo-full.svg") %>
         </section>
 
         <section id="islands" >
-            <div class="islands-container">
-                <h2>Featured Islands</h2>
-                <div class="container steps-card-container">
+            <h2 class="header-gradient">Featured Islands</h2>
+            <div class="islands-card-container">
 
-                  <% @islands.each do |island| %>
-                    <article class="steps-card">
-                        <i class="fa-sharp fa-solid fa-thought-bubble" style="color: #6184d8;"></i>
-                        <h3><%= island.name %></h3>
-                        <p>Lorem ipsum dolor sit. </p>
-                        <%= link_to island.name, island_path(island) %>
-                    </article>
-                  <% end %>
-                </div>
+                <% @islands.first(3).each do |island| %>
+                <article class="island-card">
+                    <i class="fa-sharp fa-solid fa-thought-bubble" style="color: #6184d8;"></i>
+                    <h3><%= island.name %></h3>
+                    <p>Lorem ipsum dolor sit. </p>
+                    <%= link_to island.name, island_path(island), class: "btn main-cta-color-BonWup" %>
+                </article>
+                <% end %>
             </div>
         </section>
 
         <section id="advantages">
-            <h2>The Fast, Flexible, and Hassle-Free Way to Travel</h2>
+            <h2 class="header-gradient">The Fast, Flexible, and Hassle-Free Way to Travel</h2>
             <div class="adv-container">
-                <div class="adv-card">
-                    <i class="fa-solid fa-gauge-high"></i>
-                    <h4>Instant Connectivity</h4>
-                </div>
-
                 <div class="adv-card">
                     <i class="fa-solid fa-gauge-high"></i>
                     <h4>Time Efficiency</h4>
                 </div>
 
                 <div class="adv-card">
-                    <i class="fa-solid fa-gauge-high"></i>
+                    <i class="fa-solid fa-globe"></i>
                     <h4>Versatile Travel</h4>
                 </div>
 
                 <div class="adv-card">
-                    <i class="fa-solid fa-gauge-high"></i>
+                    <i class="fa-solid fa-bridge"></i>
+                    <h4>Instant Bridge</h4>
+                </div>
+
+                <div class="adv-card">
+                    <i class="fa-solid fa-leaf"></i>
                     <h4>Eco-Friendly</h4>
                 </div>
-                <a href="#" class="tele-btn">Teleport Now</a>
+            </div>
+            <div class="adv-btn-container">
+                <a href="#" class="adv-btn">Teleport Now</a>
             </div>
         </section>
 
         <section id="reviews">
-            <h2>Teleportation Tales: What Our Teleporters Have to Say</h2>
+            <h2 class="header-gradient">Teleportation Tales: What Our Teleporters Have to Say</h2>
             <div class="reviews-container">
                 <div class="review-card">
-                    <p class="name">Gerard L.</p>
+                    <p class="name">Will S.</p>
                     <ul class="stars">
                         <li class="first"><i class="fa-solid fa-star"></i></li>
                         <li><i class="fa-solid fa-star"></i></li>
@@ -151,8 +150,7 @@
                         <li><i class="fa-solid fa-star"></i></li>
                         <li><i class="fa-regular fa-star"></i></li>
                     </ul>
-                    <p class="comment">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam commodi omnis blanditiis!
-                        Cupiditate quod vel rerum laborum explicabo, atque aspernatur?</p>
+                    <p class="comment">Teleportation travel was like stepping into a postcard! It left me with more time to soak up the beauty of the island.</p>
                 </div>
 
                 <div class="review-card">
@@ -164,78 +162,91 @@
                         <li><i class="fa-solid fa-star"></i></li>
                         <li><i class="fa-regular fa-star"></i></li>
                     </ul>
-                    <p class="comment">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam commodi omnis blanditiis!
-                        Cupiditate quod.</p>
+                    <p class="comment">Thanks to teleportation, this trip was smooth sailing from start to finish! Event got a new hair color during the teleportation.</p>
+                </div>
+
+                <div class="review-card">
+                    <p class="name">Sonia B.</p>
+                    <ul class="stars">
+                        <li class="first"><i class="fa-solid fa-star"></i></li>
+                        <li><i class="fa-solid fa-star"></i></li>
+                        <li><i class="fa-solid fa-star"></i></li>
+                        <li><i class="fa-solid fa-star"></i></li>
+                        <li><i class="fa-regular fa-star"></i></li>
+                    </ul>
+                    <p class="comment">Teleportation travel was like stepping into a postcard! It left me with more time to soak up the beauty of the island.</p>
                 </div>
             </div>
         </section>
 
         <section class="faq">
-            <h2 class="faq-title">FAQ</h2>
+            <h2 class="faq-title header-gradient">FAQ</h2>
             <div class="video-container">
                 <div style="padding:56.25% 0 0 0;position:relative;">
                     <iframe loading="lazy" src="https://player.vimeo.com/video/942759445?h=cb30828522&title=0&byline=0&portrait=0&loop=1" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
                 </div>
                     <script src="https://player.vimeo.com/api/player.js"></script>
             </div>
-            <div class="accordion accordion-flush" id="accordionFlushExample">
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingOne">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                            How does teleportation travel work?
-                        </button>
-                    </h2>
-                    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                        <div class="accordion-body text-white">
-                            Teleportation travel utilizes advanced technology to instantly transport individuals from one location of our location to another by dematerializing them at the starting point and rematerializing them at the destination.
+            <div class="accord-container">
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingOne">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                How does teleportation travel work?
+                            </button>
+                        </h2>
+                        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body text-white">
+                                Teleportation travel utilizes advanced technology to instantly transport individuals from one location of our location to another by dematerializing them at the starting point and rematerializing them at the destination.
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingTwo">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                            Is teleportation safe?
-                        </button>
-                    </h2>
-                    <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                        <div class="accordion-body">
-                            Yes, teleportation is safe. Our teleportation service undergoes rigorous testing and adheres to strict safety protocols to ensure the well-being of our travelers.
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                Is teleportation safe?
+                            </button>
+                        </h2>
+                        <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                Yes, teleportation is safe. Our teleportation service undergoes rigorous testing and adheres to strict safety protocols to ensure the well-being of our travelers.
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingThree">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                             Is teleportation travel environmentally friendly?
-                        </button>
-                    </h2>
-                    <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                        <div class="accordion-body">
-                            Yes, teleportation travel is environmentally friendly. By eliminating the need for traditional modes of transportation such as airplanes or cars, teleportation helps reduce carbon emissions and minimize environmental impact.
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                                Is teleportation travel environmentally friendly?
+                            </button>
+                        </h2>
+                        <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                Yes, teleportation travel is environmentally friendly. By eliminating the need for traditional modes of transportation such as airplanes or cars, teleportation helps reduce carbon emissions and minimize environmental impact.
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingFour">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
-                            Can I teleport to multiple destinations in one trip?
-                        </button>
-                    </h2>
-                    <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
-                        <div class="accordion-body">
-                            Currently, our teleportation service is limited to single-point teleportation. Each teleportation journey transports travelers directly from one location to another.
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingFour">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                                Can I teleport to multiple destinations in one trip?
+                            </button>
+                        </h2>
+                        <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                Currently, our teleportation service is limited to single-point teleportation. Each teleportation journey transports travelers directly from one location to another.
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingFive">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
-                            How much does teleportation travel cost?
-                        </button>
-                    </h2>
-                    <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
-                        <div class="accordion-body">
-                            Teleportation travel costs vary depending on factors such as distance and destination. Start to plan your teleportation, you will have the pricing in the Teleport Travel Sum Up page of your booking. If the price is good for you, you can proceed to the payment step.
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingFive">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+                                How much does teleportation travel cost?
+                            </button>
+                        </h2>
+                        <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                Teleportation travel costs vary depending on factors such as distance and destination. Start to plan your teleportation, you will have the pricing in the Teleport Travel Sum Up page of your booking. If the price is good for you, you can proceed to the payment step.
+                            </div>
                         </div>
                     </div>
                 </div>

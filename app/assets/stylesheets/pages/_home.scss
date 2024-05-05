@@ -129,14 +129,113 @@ button {
 
 main {
   #about {
-    margin: 4rem 0;
+    margin: 10rem 0;
+    display: flex;
+    // flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+
+    .about-text {
+      h2 {
+        margin-bottom: 2rem;
+      }
+
+      p:last-of-type {
+        margin-bottom: 2rem;
+      }
+    }
     img {
       height: 150px;
       width: auto;
+      margin-bottom: 2rem;
+    }
+  }
+
+  #islands {
+    margin: 10rem 0;
+
+    h2 {
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .islands-card-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+
+      .island-card {
+        background: rgba(255, 255, 255, 0.2);
+        box-shadow: 0px 20px 20px -17px rgba(158, 104, 221, 0.2);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        padding: 1rem;
+        border-radius: 20px;
+        width: 31%;
+        transition: all .3s ease-in;
+
+        &:hover {
+          -webkit-box-shadow: 0px 25px 25px -27px rgba(158, 104, 221, 0.6);
+            -moz-box-shadow: 0px 25px 25px -27px rgba(158, 104, 221, 0.6);
+            box-shadow: 0px 25px 25px -27px rgba(158, 104, 221, 0.6);
+        }
+      }
+    }
+  }
+
+  #advantages {
+    margin: 6rem 0;
+    h2 {
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    .adv-btn-container {
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      // margin-top: 2rem;
+    }
+
+    .adv-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .adv-card {
+
+        i {
+          font-size: 3rem;
+          margin-bottom: 1rem;
+        }
+
+        background: rgba(255, 255, 255, 0.2);
+        box-shadow: 0px 20px 20px -17px rgba(107, 218, 176, 0.2);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        padding: 1rem;
+        border-radius: 20px;
+        width: 24%;
+        transition: all .3s ease-in;
+        text-align: center;
+        // min-height: 150px;
+
+        &:hover {
+          -webkit-box-shadow: 0px 20px 20px -27px rgba(107, 218, 176, 0.6);
+            -moz-box-shadow: 0px 20px 20px -27px rgba(107, 218, 176, 0.6);
+            box-shadow: 0px 20px 20px -27px rgba(107, 218, 176, 0.6);
+        }
+      }
     }
   }
 
   #reviews {
+    h2 {
+      margin-bottom: 2rem;
+    }
+
       .reviews-container {
         display: flex;
         gap: 15px;
@@ -190,6 +289,11 @@ main {
   .faq {
     margin-top: 7.5rem;
     color: $font_color !important;
+    text-align: center;
+
+    .accord-container {
+      margin-top: 3rem;
+    }
 
     .faq-title {
       font-size: 2.5rem;
@@ -199,6 +303,7 @@ main {
     .accordion {
       --bs-accordion-bg: none !important;
       color: $font_color !important;
+      text-align: left;
 
       .accordion-item {
         padding: 1% 0;
@@ -268,7 +373,7 @@ main {
       }
 
       // add a media query when below 1100px
-      @media only screen and (max-width: 1100px) {
+      @media only screen and (max-width: 998px) {
         flex-direction: column;
         gap: 1rem;
 
