@@ -172,6 +172,3 @@ Review.create!(
   comment: "Incredible experience ! Lost few shoes on the way but at the didn’t need them as the beaches were calling us.",
   rating: 4
 )
-
-
-
