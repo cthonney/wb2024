@@ -206,7 +206,7 @@ main {
       .adv-card {
 
         i {
-          font-size: 2rem;
+          font-size: 3rem;
           margin-bottom: 1rem;
         }
 
@@ -291,6 +291,10 @@ main {
     color: $font_color !important;
     text-align: center;
 
+    .accord-container {
+      margin-top: 3rem;
+    }
+
     .faq-title {
       font-size: 2.5rem;
       margin-bottom: 2rem;
@@ -299,6 +303,7 @@ main {
     .accordion {
       --bs-accordion-bg: none !important;
       color: $font_color !important;
+      text-align: left;
 
       .accordion-item {
         padding: 1% 0;
