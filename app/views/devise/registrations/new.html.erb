@@ -1,12 +1,14 @@
 <div class='login-form mt-4'>
   <div class="form-logo">
-    <%= image_tag "logo.svg" %>
+    <%= image_tag "logo-full.svg" %>
   </div>
-  <h2>Sign up</h2>
 
+<div class= "card border-dark mb-3 p-5 mx-auto" style="width: 50%;">
+<div class= "card-body text-dark">
+  <h2>Sign up</h2>
+   <p>Create your free IslePortal account to start book and view your teleport travels.</p>
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
     <%= f.error_notification %>
-
     <div class="form-inputs">
       <%= f.input :email,
                   required: true,
@@ -21,12 +23,12 @@
                   autofocus: true,
                   input_html: { autocomplete: "last_name" }%>
       <div class="btn main-cta-color-BonWup" id="file-field">
-          <label for="file-input">
-            <span class="fas fa-camera tag"> Upload your profile picture</span>
-          </label>
           <%= f.file_field :avatar,
                           id:"file-input",
                           direct_upload: true%>
+          <label for="file-input">
+            <span class="fas fa-camera tag"> Profile picture</span>
+          </label>
         </div>
       <%= f.input :password,
                   required: true,
@@ -50,4 +52,6 @@
 
     <%= render "devise/shared/links" %>
   </div>
+</div>
+</div>
 </div>
