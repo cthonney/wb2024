@@ -42,6 +42,12 @@ u5 = User.create!(
   first_name: Faker::Name.first_name,
   last_name: Faker::Name.last_name
 )
+u6 = User.create!(
+  email: Faker::Internet.email,
+  password: Faker::Internet.password(min_length: 8),
+  first_name: Faker::Name.first_name,
+  last_name: Faker::Name.last_name
+)
 # End of database seeding
 puts "Finished seeding users"
 
@@ -131,11 +137,12 @@ puts "Finished seeding isdlands"
 
 #create booking
 
-b1 = Booking.create!(start_date: "2024-05-01 00:00:00", user_id: u1.id, start_island_id: i1.id, end_island_id: i2.id, adults: 2, kids: 1, baggages: 2, pets: 1)
-b2 = Booking.create!(start_date: "2024-05-01 00:00:00", user_id: u2.id, start_island_id: i2.id, end_island_id: i3.id, adults: 2, kids: 1, baggages: 2, pets: 1)
+b1 = Booking.create!(start_date: "2024-05-01 00:00:00", user_id: u1.id, start_island_id: i1.id, end_island_id: i2.id, adults: 0, kids: 0, baggages: 2, pets: 0)
+b2 = Booking.create!(start_date: "2024-05-01 00:00:00", user_id: u2.id, start_island_id: i2.id, end_island_id: i3.id, adults: 1, kids: 0, baggages: 2, pets: 0)
 b3 = Booking.create!(start_date: "2024-05-01 00:00:00", user_id: u3.id, start_island_id: i3.id, end_island_id: i4.id, adults: 2, kids: 1, baggages: 2, pets: 1)
-b4 = Booking.create!(start_date: "2024-05-01 00:00:00", user_id: u4.id, start_island_id: i4.id, end_island_id: i5.id, adults: 2, kids: 1, baggages: 2, pets: 1)
-b5 = Booking.create!(start_date: "2024-05-01 00:00:00", user_id: u5.id, start_island_id: i5.id, end_island_id: i6.id, adults: 2, kids: 1, baggages: 2, pets: 1)
+b4 = Booking.create!(start_date: "2024-05-01 00:00:00", user_id: u4.id, start_island_id: i4.id, end_island_id: i5.id, adults: 3, kids: 0, baggages: 2, pets: 2)
+b5 = Booking.create!(start_date: "2024-05-01 00:00:00", user_id: u5.id, start_island_id: i5.id, end_island_id: i6.id, adults: 1, kids: 0, baggages: 2, pets: 0)
+b6 = Booking.create!(start_date: "2024-05-01 00:00:00", user_id: u6.id, start_island_id: i6.id, end_island_id: i1.id, adults: 2, kids: 2, baggages: 2, pets: 1)
 puts "Finished seeding bookings"
 
 puts "Finished seeding the database"
@@ -171,4 +178,11 @@ Review.create!(
   island: b5.end_island,
   comment: "Incredible experience ! Lost few shoes on the way but at the didn’t need them as the beaches were calling us.",
   rating: 4
+)
+
+Review.create!(
+  booking_id: b6.id,
+  island: b6.end_island,
+  comment: "Incredible experience ! Lost few shoes on the way but at the didn’t need them as the beaches were calling us.",
+  rating: 5
 )

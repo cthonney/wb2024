@@ -19,16 +19,26 @@
 
   <div class="description-island">
     <h1>
-      <%= @island.name %>
+      Teleport to <%= @island.name %> island !
     </h1>
+    <br>
+    <br>
+    <br>
     <p>
       <%= @island.description %>
     </p>
     <p>
-      <%= @island.access_transport %>
+      <b>1. Cultural Diversity:</b> <%= @island.cul_diversity %>
     </p>
     <p>
-      <%= @island.practical_info %>
+      <b>2. Geographic Features:</b> <%= @island.geo_features %>
+    </p>
+    <p>
+      <b>3. Accessibility and Transportation:</b> <%= @island.access_transport %>
+    </p>
+    </p>
+    <p>
+      <b>BONUS | Good to know:</b> <%= @island.practical_info %>
     </p>
   </div>
 
@@ -134,12 +144,13 @@
   <div class="reviews-container">
     <% @reviews.each do |review| %>
       <div class="review-card">
-        <% review.rating.times do %>
-          <i class="fa-solid fa-star"></i>
-        <% end %>
+      <h3><%= review.booking.user.first_name%> <%= review.booking.user.last_name%></h3>
         <p>
           <%= review.comment %>
         </p>
+        <% review.rating.times do %>
+          <i class="fa-solid fa-star"></i>
+        <% end %>
       </div>
     <% end %>
   </div>
