@@ -64,7 +64,11 @@
                                         include_blank: false,
                                         wrapper_html: { class: 'booking-form' },
                                         label_html: { class: 'input-group-text' },
-                                        input_html: { class: 'form-select' }
+                                        input_html: { class: 'form-select' },
+                                        selected: @island.id,
+                                        readonly: true,
+                                        disabled: true
+
                             %>
                         </div>
                         <div class="input-group second">
