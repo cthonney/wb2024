@@ -4,9 +4,10 @@
     border: none;
   }
   .payment-box {
-    background-color: rgba(255, 255, 255, 0.253);
-    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
     padding: 20px;
+    min-width: 780px;
     max-width: 1000px;
   }
 
