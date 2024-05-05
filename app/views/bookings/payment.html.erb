@@ -1,7 +1,7 @@
 <div class="d-flex justify-content-center mt-5 mb-5" id="payment">
   <div class="row g-3 payment-box">
     <div class="col-md-6">
-      <h3 class="text-light">Payment Method</h3>
+      <h3 class="text-dark">Payment Method</h3>
       <div class="card">
         <div class="accordion" id="accordionExample">
           <div class="card">
@@ -95,7 +95,7 @@
     </div>
 
     <div class="col-md-6">
-        <h3 class="text-light">Summary</h3>
+        <h3 class="text-dark">Summary</h3>
 
         <div class="card">
 
@@ -105,10 +105,9 @@
 
               <span>
                 <%= @booking.start_island.name %>
-                <i class="fas fa-arrow-right"></i>
+                <i class="fas fa-arrow-right px-3"></i>
                 <%= @booking.end_island.name %>
               </span>
-              <a href="#" class="billing">Booking date: <%=  %></a>
 
             </div>
 
@@ -160,10 +159,10 @@
           <div class="p-3">
 
             <div class="d-grid gap-2">
-                      <button class="btn btn-primary"
+                      <button class="main-cta-color-BonWup isl"
                         data-controller="sweetalert"
                         data-action="click->sweetalert#showAlert"
-                      >Try it free for 30 days</button>
+                      >Pay now</button>
             </div>
 
 
