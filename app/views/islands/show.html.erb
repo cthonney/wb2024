@@ -1,9 +1,94 @@
-<div id="island">
+<script src='https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.js' data-turbolinks-track></script>
+<div class="island-content my-4" id="islandPictures">
+  <%= link_to :back, class:"back-btn btn btn-primary" do %>
+    <i class="fa-solid fa-arrow-left"></i>
+  <% end %>
+  <img src="https://placehold.co/600x400" class="d-block w-100 portal" alt="...">
+  <img src="https://placehold.co/600x400" class="d-block w-100 other" alt="...">
+  <img src="https://placehold.co/600x400" class="d-block w-100 other" alt="...">
+</div>
+
+<div id="island" class="island-content">
+
+
   <div class="description-island">
     <h1>
       <%= @island.name %>
     </h1>
+    <p>
+      <%= @island.description %>
+    </p>
+    <p>
+      <%= @island.access_transport %>
+    </p>
+    <p>
+      <%= @island.practical_info %>
+    </p>
   </div>
+
+  <%= simple_form_for @booking do |f| %>
+    <%= f.input :start_date,
+              as: :string,
+              input_html: { data: { controller: "datepicker" } } %>
+              <%# island start %>
+    <div>
+
+    </div>
+    <%= f.input :start_island_id,
+              collection: Island.all,
+              label_method: :name,
+              value_method: :id,
+              include_blank: false,
+              selected: @island.id,
+              disabled: true,
+              readonly: true
+              %>
+              <%# island end %>
+    <%# island end %>
+    <%= f.input :end_island_id,
+              collection: Island.all,
+              label_method: :name,
+              value_method: :id,
+              include_blank: false %>
+    <%= f.input :adults, collection: 1..10, selected: 1 %>
+    <%= f.input :kids, collection: 0..10, selected: 0 %>
+    <%= f.input :pets, collection: 0..10, selected: 0 %>
+    <%= f.input :baggages, collection: 0..10, selected: 0 %>
+    <div class="d-grid gap-2 d-flex">
+        <% if user_signed_in? %>
+          <% if @show_checkbox_recaptcha %>
+            <%= recaptcha_tags %>
+          <% else %>
+            <%= recaptcha_v3(action: 'login', class: 'btn main-cta-color', site_key: ENV['RECAPTCHA_SITE_KEY_V3']) %>
+          <% end %>
+          <%= f.button :submit, 'Teleport', class: 'btn main-cta-color-BonWup-book' %>
+        <% else %>
+          <button
+            type="button"
+            class="btn main-cta-color-BonWup-book"
+            data-bs-toggle="modal"
+            data-bs-target="#loginModal"
+          >
+            Teleport
+          </button>
+        <% end %>
+    </div>
+  <% end %>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="island-content my-4">
   <div class="map-island"
     data-controller="map-single"
     data-map-single-marker-value="<%= @marker.to_json %>"
@@ -11,3 +96,25 @@
   >
   </div>
 </div>
+
+<div class="island-content my-4">
+  <%= pluralize(@island.reviews.count, "review") %>
+  <div class="reviews">
+    <% @reviews.each do |review| %>
+      <div class="review">
+        <p>
+          <%= review.comment %>
+        </p>
+        <% review.rating.times do %>
+          <i class="fa-solid fa-star"></i>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+</div>
+
+
+<% unless user_signed_in? %>
+  <%= render 'shared/login_modal' %>
+<% end %>

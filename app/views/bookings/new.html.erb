@@ -23,11 +23,12 @@
   <%= f.input :baggages, collection: 0..10, selected: 0 %>
   <div class="d-grid gap-2 d-flex">
     <div class="form-actions">
-                  <% if @show_checkbox_recaptcha %>
-                    <%= recaptcha_tags %>
-                  <% else %>
-                    <%= recaptcha_v3(action: 'login', class: 'btn main-cta-color', site_key: ENV['RECAPTCHA_SITE_KEY_V3']) %>
-                  <% end %>
-                    <%= f.button :submit, "Send", class: 'main-cta-color-BonWup' %>
-      </div>
+      <% if @show_checkbox_recaptcha %>
+        <%= recaptcha_tags %>
+      <% else %>
+        <%= recaptcha_v3(action: 'login', class: 'btn main-cta-color', site_key: ENV['RECAPTCHA_SITE_KEY_V3']) %>
+      <% end %>
+        <%= f.button :submit, "Send", class: 'main-cta-color-BonWup' %>
+    </div>
+  </div>
 <% end %>

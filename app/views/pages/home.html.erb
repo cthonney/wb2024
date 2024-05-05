@@ -12,73 +12,76 @@
         <section id="booking-section">
             <div class="booking-container">
                 <h2 class="header-gradient">Dial in your next Teleportation now.</h2>
-              <%= simple_form_for @booking do |f| %>
-                <div class="input-group-container">
-                    <div class="input-group gap-1">
-                    <%= f.input :start_date,
-                                as: :string,
-                                input_html: { data: { controller: "datepicker" },
-                                class: 'form-select'
-                                },
-                                wrapper_html: { class: 'mb-3 booking-form' },
-                                label_html: { class: 'input-group-text' }
-                    %>
-                                <%# island start %>
-                    <%= f.input :start_island_id,
-                                collection: Island.all,
-                                label_method: :name,
-                                value_method: :id,
-                                include_blank: false,
-                                wrapper_html: { class: 'mb-3 booking-form' },
-                                label_html: { class: 'input-group-text' },
-                                input_html: { class: 'form-select' }
-                    %>
-                                <%# island end %>
-                    <%# island end %>
-                    <%= f.input :end_island_id,
-                                collection: Island.all,
-                                label_method: :name,
-                                value_method: :id,
-                                include_blank: false,
-                                wrapper_html: { class: 'mb-3 booking-form' },
-                                label_html: { class: 'input-group-text' },
-                                input_html: { class: 'form-select' }
-                    %>
-                    </div>
-                    <div class="input-group second">
-                    <%= f.input :adults, collection: 1..10, selected: 1, wrapper_html: { class: 'mb-3 booking-form' },
-                    label_html: { class: 'input-group-text' },
-                    input_html: { class: 'form-select' }
-                    %>
-
-                    <%= f.input :kids, collection: 0..10, selected: 0,
-                    wrapper_html: { class: 'booking-form' },
-                    label_html: { class: 'input-group-text' },
-                    input_html: { class: 'form-select' }
-
-
-                    %>
-                    <%= f.input :baggages, collection: 0..10, selected: 0,
-                    wrapper_html: { class: 'booking-form' },
-                    label_html: { class: 'input-group-text' },
-                    input_html: { class: 'form-select' }
-                    %>
-                    <%= f.input :pets, collection: 0..10, selected: 0,
-                    wrapper_html: { class: 'booking-form' },
-                    label_html: { class: 'input-group-text' },
-                    input_html: { class: 'form-select' }
-                    %>
-
-                    </div>
+                <%= simple_form_for @booking do |f| %>
+                    <div class="input-group-container">
+                        <div class="input-group gap-1">
+                            <%= f.input :start_date,
+                                        as: :string,
+                                        input_html: { data: { controller: "datepicker" },
+                                        class: 'form-select'
+                                        },
+                                        wrapper_html: { class: 'booking-form' },
+                                        label_html: { class: 'input-group-text' }
+                            %>
+                                        <%# island start %>
+                            <%= f.input :start_island_id,
+                                        collection: Island.all,
+                                        label_method: :name,
+                                        value_method: :id,
+                                        include_blank: false,
+                                        wrapper_html: { class: 'booking-form' },
+                                        label_html: { class: 'input-group-text' },
+                                        input_html: { class: 'form-select' }
+                            %>
+                                        <%# island end %>
+                            <%# island end %>
+                            <%= f.input :end_island_id,
+                                        collection: Island.all,
+                                        label_method: :name,
+                                        value_method: :id,
+                                        include_blank: false,
+                                        wrapper_html: { class: 'booking-form' },
+                                        label_html: { class: 'input-group-text' },
+                                        input_html: { class: 'form-select' }
+                            %>
+                        </div>
+                        <div class="input-group second">
+                            <%= f.input :adults, collection: 1..10, selected: 1, wrapper_html: { class: 'booking-form' },
+                            label_html: { class: 'input-group-text' },
+                            input_html: { class: 'form-select' }
+                            %>
+                            <%= f.input :kids, collection: 0..10, selected: 0,
+                            wrapper_html: { class: 'booking-form' },
+                            label_html: { class: 'input-group-text' },
+                            input_html: { class: 'form-select' }
+                            %>
+                            <%= f.input :baggages, collection: 0..10, selected: 0,
+                            wrapper_html: { class: 'booking-form' },
+                            label_html: { class: 'input-group-text' },
+                            input_html: { class: 'form-select' }
+                            %>
+                            <%= f.input :pets, collection: 0..10, selected: 0,
+                            wrapper_html: { class: 'booking-form' },
+                            label_html: { class: 'input-group-text' },
+                            input_html: { class: 'form-select' }
+                            %>
+                        </div>
                 </div>
-                <% if @show_checkbox_recaptcha %>
-        <%= recaptcha_tags %>
-      <% else %>
-        <%= recaptcha_v3(action: 'login', class: 'btn main-cta-color-BonWup-book', site_key: ENV['RECAPTCHA_SITE_KEY_V3']) %>
-      <% end %>
-        <%= f.button :submit, "Teleport", class: 'btn main-cta-color-BonWup-book' %>
-      </div>
-    <% end %>
+
+              <% if user_signed_in? %>
+                <%= f.button :submit, 'Teleport', class: 'btn main-cta-color-BonWup-book' %>
+              <% else %>
+                <button
+                  type="button"
+                  class="btn main-cta-color-BonWup-book"
+                  data-bs-toggle="modal"
+                  data-bs-target="#loginModal"
+                >
+                  Teleport
+                </button>
+              <% end %>
+            <% end %>
+          </div>
         </section>
 
         <section id="about">
@@ -180,7 +183,7 @@
             <h2 class="faq-title header-gradient">FAQ</h2>
             <div class="video-container">
                 <div style="padding:56.25% 0 0 0;position:relative;">
-                    <iframe src="https://player.vimeo.com/video/942759445?h=cb30828522&title=0&byline=0&portrait=0&loop=1" style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius:5px;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                    <iframe loading="lazy" src="https://player.vimeo.com/video/942759445?h=cb30828522&title=0&byline=0&portrait=0&loop=1" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
                 </div>
                     <script src="https://player.vimeo.com/api/player.js"></script>
             </div>
@@ -250,4 +253,8 @@
             </div>
         </section>
 
-    </main>
+</main>
+
+<% unless user_signed_in? %>
+  <%= render 'shared/login_modal' %>
+<% end %>
