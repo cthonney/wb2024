@@ -1,6 +1,8 @@
 class Island < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
+  has_many_attached :photos
+  has_one_attached :portal_photo
 
   has_many :reviews
   has_many :start_bookings, class_name: 'Booking', foreign_key: 'start_island_id'
