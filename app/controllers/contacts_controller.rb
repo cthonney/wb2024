@@ -5,12 +5,10 @@ class ContactsController < ApplicationController
   end
   def create
     @contact = Contact.new(contact_params)
-    success = verify_recaptcha(action: 'login', minimum_score: 0.5, secret_key: ENV['RECAPTCHA_SECRET_KEY_V3'])
-    checkbox_success = verify_recaptcha unless success
-    if (success || checkbox_success) && @contact.save
+    if  @contact.save
       redirect_to root_path, notice: "Your message has been successfully submitted."
     else
-      @show_checkbox_recaptcha = !success
+
       render :new
     end
   end
