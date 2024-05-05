@@ -1,22 +1,35 @@
 #island {
-  position: relative;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 16px;
+
+  #new_booking {
+    background-color: hsla(0, 0%, 100%, 0.3);
+    padding: 16px;
+    border-radius: 16px;
+
+    .main-cta-color-BonWup-book {
+      width: 100%;
+      padding: 0.5rem 8px;
+    }
+
+  }
+
+}
+
+.island-content {
   display: flex;
-  gap: 32px;
+  gap: 8px;
   padding: 16px;
   border-radius: 16px;
   background-color: hsla(0, 0%, 100%, 0.3);
-  flex-grow: 1;
-  justify-content: space-between;
-  .description-island {
-    min-width: 200px;
-    width: 66%;
-  }
+}
 
-  .map-island {
-    width: clamp(200px, 33%, 600px);
-    height: clamp(200px, 50vh, 600px);
-    border-radius: 16px;
-  }
+#islandPictures {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(200px, 1fr));
+  grid-auto-rows: minmax(100px, auto);
 
   .back-btn {
     position: absolute;
@@ -34,4 +47,18 @@
       font-size: 1.5rem;
     }
   }
+  img {
+    border-radius: 8px;
+  }
+
+  .portal {
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+  }
 }
+
+  .map-island {
+    width: 100%;
+    height: clamp(200px, 50vh, 600px);
+    border-radius: 16px;
+  }

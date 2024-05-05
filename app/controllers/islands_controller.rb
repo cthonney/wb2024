@@ -20,6 +20,8 @@ class IslandsController < ApplicationController
         lat: @island.latitude,
         lng: @island.longitude
       }
+    @reviews = Review.where(island_id: @island.id)
+    @booking = Booking.new
   end
 
   def create
