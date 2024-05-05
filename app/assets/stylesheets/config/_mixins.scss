@@ -145,6 +145,25 @@
     }
 }
 
+.adv-btn {
+    color: $white;
+    background-color: $secondaryColor;
+    border: 1px solid $secondaryColor;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 15px 35px;
+    border-radius: 35px;
+    transition: all 0.3s ease;
+    margin-top: 2rem;
+
+    &:hover {
+        background-color: $ironBlack;
+        color: $font_color;
+        transform: scale(1.09);
+        border: 1px solid $font_color;
+    }
+}
+
 .main-cta-color-BonWup-book {
     color: $white;
     background-color: $primaryColor;
