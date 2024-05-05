@@ -120,9 +120,9 @@
     transition: all 0.3s ease;
 
     &:hover {
-        color: $primaryColor;
-        transform: scale(1.1);
-        border: 1px solid $primaryColor;
+        color: $font_color;
+        transform: scale(1.09);
+        border: 1px solid $font_color;
     }
 }
 
