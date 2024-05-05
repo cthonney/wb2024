@@ -1,6 +1,6 @@
 <script src='https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.js' data-turbolinks-track></script>
 <div class="island-content my-4" id="islandPictures">
-  <%= link_to :back, class:"back-btn btn btn-primary" do %>
+  <%= link_to :back, class:"back-btn" do %>
     <i class="fa-solid fa-arrow-left"></i>
   <% end %>
   <%= image_tag @island.portal_photo, class:"d-block w-100 portal" %>
@@ -32,51 +32,78 @@
     </p>
   </div>
 
-  <%= simple_form_for @booking do |f| %>
-    <%= f.input :start_date,
-              as: :string,
-              input_html: { data: { controller: "datepicker" } } %>
+  <div class="booking-container">
+                <h2 class="header-gradient">Get started now</h2>
+                <%= simple_form_for @booking do |f| %>
+                    <div class="input-group-container">
+                        <div class="input-group gap-1">
+                            <%= f.input :start_date,
+                                        as: :string,
+                                        input_html: { data: { controller: "datepicker" },
+                                        class: 'form-select'
+                                        },
+                                        wrapper_html: { class: 'booking-form' },
+                                        label_html: { class: 'input-group-text' }
+                            %>
+                                        <%# island start %>
+                            <%= f.input :start_island_id,
+                                        collection: Island.all,
+                                        label_method: :name,
+                                        value_method: :id,
+                                        include_blank: false,
+                                        wrapper_html: { class: 'booking-form' },
+                                        label_html: { class: 'input-group-text' },
+                                        input_html: { class: 'form-select' }
+                            %>
+                                        <%# island end %>
+                            <%# island end %>
+                            <%= f.input :end_island_id,
+                                        collection: Island.all,
+                                        label_method: :name,
+                                        value_method: :id,
+                                        include_blank: false,
+                                        wrapper_html: { class: 'booking-form' },
+                                        label_html: { class: 'input-group-text' },
+                                        input_html: { class: 'form-select' }
+                            %>
+                        </div>
+                        <div class="input-group second">
+                            <%= f.input :adults, collection: 1..10, selected: 1, wrapper_html: { class: 'booking-form' },
+                            label_html: { class: 'input-group-text' },
+                            input_html: { class: 'form-select' }
+                            %>
+                            <%= f.input :kids, collection: 0..10, selected: 0,
+                            wrapper_html: { class: 'booking-form' },
+                            label_html: { class: 'input-group-text' },
+                            input_html: { class: 'form-select' }
+                            %>
+                            <%= f.input :baggages, collection: 0..10, selected: 0,
+                            wrapper_html: { class: 'booking-form' },
+                            label_html: { class: 'input-group-text' },
+                            input_html: { class: 'form-select' }
+                            %>
+                            <%= f.input :pets, collection: 0..10, selected: 0,
+                            wrapper_html: { class: 'booking-form' },
+                            label_html: { class: 'input-group-text' },
+                            input_html: { class: 'form-select' }
+                            %>
+                        </div>
+                </div>
 
-    <div>
-
-    </div>
-    <%= f.input :start_island_id,
-              collection: Island.all,
-              label_method: :name,
-              value_method: :id,
-              include_blank: false %>
-    <%= f.input :end_island_id,
-              collection: Island.all,
-              label_method: :name,
-              value_method: :id,
-              include_blank: false,
-              selected: @island.id,
-              disabled: true,
-              readonly: true %>
-    <%= f.input :adults, collection: 1..10, selected: 1 %>
-    <%= f.input :kids, collection: 0..10, selected: 0 %>
-    <%= f.input :pets, collection: 0..10, selected: 0 %>
-    <%= f.input :baggages, collection: 0..10, selected: 0 %>
-    <div class="d-grid gap-2 d-flex">
-        <% if user_signed_in? %>
-          <% if @show_checkbox_recaptcha %>
-            <%= recaptcha_tags %>
-          <% else %>
-            <%= recaptcha_v3(action: 'login', class: 'btn main-cta-color', site_key: ENV['RECAPTCHA_SITE_KEY_V3']) %>
-          <% end %>
-          <%= f.button :submit, 'Teleport', class: 'btn main-cta-color-BonWup-book' %>
-        <% else %>
-          <button
-            type="button"
-            class="btn main-cta-color-BonWup-book"
-            data-bs-toggle="modal"
-            data-bs-target="#loginModal"
-          >
-            Teleport
-          </button>
-        <% end %>
-    </div>
-  <% end %>
+              <% if user_signed_in? %>
+                <%= f.button :submit, 'Teleport', class: 'btn main-cta-color-BonWup-book' %>
+              <% else %>
+                <button
+                  type="button"
+                  class="btn main-cta-color-BonWup-book"
+                  data-bs-toggle="modal"
+                  data-bs-target="#loginModal"
+                >
+                  Teleport
+                </button>
+              <% end %>
+            <% end %>
+          </div>
 
 </div>
 
@@ -101,16 +128,18 @@
 </div>
 
 <div class="island-content my-4">
-  <%= pluralize(@island.reviews.count, "review") %>
-  <div class="reviews">
+  <div class="my-3">
+    <%= pluralize(@island.reviews.count, "review") %>
+  </div>
+  <div class="reviews-container">
     <% @reviews.each do |review| %>
-      <div class="review">
-        <p>
-          <%= review.comment %>
-        </p>
+      <div class="review-card">
         <% review.rating.times do %>
           <i class="fa-solid fa-star"></i>
         <% end %>
+        <p>
+          <%= review.comment %>
+        </p>
       </div>
     <% end %>
   </div>
