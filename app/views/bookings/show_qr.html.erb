@@ -1,14 +1,16 @@
 <div class="container-qr">
-  <%= link_to "Back", bookings_path, class: "btn btn-primary" %>
+    <%= link_to :back, class:"back-btn" do %>
+    <i class="fa-solid fa-arrow-left"></i>
+  <% end %>
 	<div class="ticket airline">
 		<div class="top">
-			<h1>Teleportation pass</h1>
+			<h1 id="tel-title">Teleportation pass</h1>
 			<div class="big">
 				<p class="from"><%= @booking.start_island.abbreviation %></p>
 				<p class="to"><i class="fas fa-arrow-right"></i> <%= @booking.end_island.abbreviation %></p>
 			</div>
 			<div class="top--side">
-				<i class="fas fa-plane"></i>
+				<%= image_tag 'portal_icon.png', class:'portal-img mb-2' %>
 				<p><%= @booking.start_island.assembly_point %></p>
 				<p><%= @booking.end_island.assembly_point %></p>
 			</div>
@@ -16,18 +18,30 @@
 		<div class="bottom">
 			<div class="column-ticket">
 				<div class="row-ticket row-1">
-					<p><span>Flight</span>AA2005</p>
-					<p class="row--right"><span>Gate</span>B3</p>
+					<p><span>Teleportation Date</span>
+            <%= @booking.start_date.strftime("%A, %d %B %Y") %>
+          </p>
+					<p class="row--right"><span>Portal no</span><%= @booking.id % 5 + 1 %></p>
 				</div>
 				<div class="row-ticket row-2">
-					<p><span>Boards</span>10:25 AM</p>
-					<p class="row--center"><span>Departs</span>11:00 AM</p>
-					<p class="row--right"><span>Arrives</span>1:05 PM</p>
+					<p><span>Boards</span>
+          <%= @booking.start_date.strftime("%I:%M %p")
+            %>
+          </p>
+					<p class="row--center"><span>Departs</span>
+            <%= @booking.start_date.advance(minutes: 2).strftime("%I:%M %p")
+            %></p>
+					<p class="row--right">
+            <span>Arrives</span>
+            <%= @booking.start_date.advance(minutes: 4).strftime("%I:%M %p") %>
+            </p>
 				</div>
 				<div class="row-ticket row-3">
-					<p><span>Passenger</span>Jesus Ramirez</p>
-					<p class="row--center"><span>Seat</span>11E</p>
-					<p class="row--right"><span>Group</span>3</p>
+					<p><span>Passenger</span>
+          <%= "#{current_user.first_name} #{current_user.last_name}" %>
+          </p>
+					<p class="row--center"><span>Queue no</span><%= @booking.id % 4 + 1 %></p>
+					<p class="row--right"><span>Group</span><%= @booking.id % 2 + 1 %></p>
 				</div>
 			</div>
 			<div class="bar--code"></div>

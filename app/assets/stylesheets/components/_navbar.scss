@@ -5,7 +5,7 @@ $font_color_dark: #1B1C1E;
 .navbar-chicken {
   position: sticky;
   top: 1%;
-  z-index: 3;
+  z-index: 1000;
   justify-content: space-between;
   margin: 1% 3%;
   border-radius: 50px;
@@ -33,7 +33,7 @@ $font_color_dark: #1B1C1E;
   &.main-cta-color-BonWup {
     padding: 20px 35px;
   }
-  
+
   &:hover {
       transform: scale(1.05);
   }
@@ -46,4 +46,3 @@ $font_color_dark: #1B1C1E;
 .navbar-nav {
   align-items: center;
 }
-

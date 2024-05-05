@@ -59,6 +59,9 @@ i1 = Island.create!(
   practical_info:"Don't be surprised if you find yourself speaking Creole with an exaggerated French accent by the end of the trip.",
   description:"Welcome to Mauritius, where azure waters meet vibrant cultures in a harmonious blend of paradise. Explore pristine beaches, lush landscapes, and a melting pot of languages and traditions that will leave you enchanted.",
   title: "Where Paradise Meets Culture",
+  abbreviation: "MRU",
+  assembly_point: "Butte de Sable, Mauritius",
+  short_description: "Discover the vibrant culture and natural beauty of Mauritius, where azure waters meet lush landscapes in a harmonious blend of paradise."
 )
 #create island reunion
 i2 = Island.create!(
@@ -72,6 +75,9 @@ i2 = Island.create!(
   practical_info:"Pack your hiking boots and your sense of adventure – you're going to need both to navigate Reunion's rugged terrain.",
   description:"Discover the thrill of adventure on the island of Reunion, where rugged mountains, lush forests, and fiery volcanoes beckon explorers. Immerse yourself in a world of natural wonders and adrenaline-pumping experiences.",
   title:"Where Adventures Awaits",
+  abbreviation: "REU",
+  assembly_point: "Piton de la Fournaise, Reunion",
+  short_description: "Embark on an adventure to Reunion, where rugged mountains, lush forests, and fiery volcanoes beckon explorers."
 )
 #create island madagascar
 i3 = Island.create!(
@@ -85,6 +91,9 @@ i3 = Island.create!(
   practical_info:"Bring your camera for wildlife spotting adventure and a pocket translator.",
   description:"Step into a world of wonder on the island of Madagascar, where biodiversity thrives and adventure awaits at every turn. From lemurs to baobabs, prepare to be captivated by the island's unique wildlife and stunning landscapes.",
   title:"Where Biodiversity Thrives",
+  abbreviation: "MDG",
+  assembly_point: "Avenue of the Baobabs, Madagascar",
+  short_description: "Embark on a journey to Madagascar, where biodiversity thrives and adventure awaits at every turn."
 )
 #create island seychelles
 i4 = Island.create!(
@@ -98,6 +107,9 @@ i4 = Island.create!(
   practical_info:"Pack light and pack smart – you never know when you might need to outrun a giant crab or negotiate with a coconut crab for the best spot on the beach.",
   description:"Escape to the tranquil paradise of Rodrigues, where turquoise lagoons, rugged cliffs, and laid-back vibes create the perfect setting for relaxation and adventure. Discover a world of natural beauty and warm hospitality on this idyllic island retreat.",
   title:"Where Simplicity Meets Nature ",
+  abbreviation: "ROD",
+  assembly_point: "Anse Mourouk, Rodrigues",
+  short_description: "Embark on a journey to Rodrigues, where turquoise lagoons, rugged cliffs, and laid-back vibes create the perfect setting for relaxation and adventure."
 )
 #create island comores
 i5 = Island.create!(
@@ -111,6 +123,9 @@ i5 = Island.create!(
   practical_info:"Don't be alarmed if your tour guide stops mid-sentence to take a selfie with a giant tortoise – it's just another day in paradise.",
   description:"Journey to the enchanting islands of Comoros, where ancient traditions, lush landscapes, and untouched beauty transport you to a world untouched by time. Lose yourself in the rhythm of island life and discover the magic of Comoros.",
   title:"Where Time Stands Still",
+  abbreviation: "COM",
+  assembly_point: "Dos du Dragon, Comores",
+  short_description: "Embark on a journey to Comoros, where ancient traditions, lush landscapes, and untouched beauty transport you to a world untouched by time."
 )
 #create island mayotte
 i6 = Island.create!(
@@ -124,6 +139,9 @@ i6 = Island.create!(
   practical_info:"Don't be surprised if your taxi driver doubles as a guide and a DJ – Mayotte is full of surprises.",
   description:"Escape to the tropical paradise of Mayotte, where crystal-clear waters, colorful coral reefs, and warm hospitality await. Dive into a world of underwater wonders and cultural delights on this hidden gem of the Indian Ocean.",
   title:"Where Hospitality Await",
+  abbreviation: "MAY",
+  assembly_point: "Mtsanga Fanou, Mayotte",
+  short_description: "Embark on a journey to Mayotte, where crystal-clear waters, colorful coral reefs, and warm hospitality await."
 )
 #end island
 puts "Finished seeding isdlands"
