@@ -232,6 +232,10 @@ main {
   }
 
   #reviews {
+    h2 {
+      margin-bottom: 2rem;
+    }
+
       .reviews-container {
         display: flex;
         gap: 15px;
@@ -285,6 +289,7 @@ main {
   .faq {
     margin-top: 7.5rem;
     color: $font_color !important;
+    text-align: center;
 
     .faq-title {
       font-size: 2.5rem;

@@ -62,7 +62,7 @@ gem "sassc-rails"
 
 gem "devise"
 gem "autoprefixer-rails"
-gem "font-awesome-sass", "~> 6.1"
+gem "font-awesome-sass", "~> 6.5.2"
 gem "simple_form", github: "heartcombo/simple_form"
 gem "rails_admin", "3.0"
 
