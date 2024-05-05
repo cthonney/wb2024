@@ -49,10 +49,10 @@ puts "Finished seeding users"
 
 #create island maurice
 i1 = Island.create!(
-  name: "Maurice",
+  name: "Mauritius 🇲🇺",
   latitude: -20.348404,
   longitude: 57.552152,
-  address: "Maurice",
+  address: "Butte de Sable, Mauritius",
   cul_diversity:"Known for its vibrant cultural mix, where French, English, and Creole blend in harmony.",
   geo_features:"Famous for its stunning coral reefs, picturesque beaches, and iconic mountain peaks like Le Morne Brabant.",
   access_transport:"Getting around is as easy as riding a giant tortoise – just watch out for traffic jams of dodos.",
@@ -62,10 +62,10 @@ i1 = Island.create!(
 )
 #create island reunion
 i2 = Island.create!(
-  name: "Reunion",
+  name: "Reunion 🇷🇪",
   latitude: -21.115141,
   longitude: 55.536384,
-  address: "Reunion",
+  address: "Piton de la Fournaise, Reunion",
   cul_diversity:"Embrace the island's Creole culture while practicing your volcano dodging skills – the piton de la Fournaise might erupt at any moment!",
   geo_features:"Prepare for jaw-dropping scenery, from towering peaks to lush forests and cascading waterfalls.",
   access_transport:"Transportation on Reunion is like riding a rollercoaster – except the rollercoaster is a mountain road and the seats are on fire.",
@@ -75,10 +75,10 @@ i2 = Island.create!(
 )
 #create island madagascar
 i3 = Island.create!(
-  name: "Madagascar",
+  name: "Madagascar 🇲🇬",
   latitude: -18.879190,
   longitude: 47.507905,
-  address: "Madagascar",
+  address: "Avenue of the Baobabs, Madagascar",
   cul_diversity:"A melting pot of cultures, languages, and traditions, where lemurs might teach you Malagasy and French or a new dance move.",
   geo_features:"Home to unique flora and fauna, from baobab trees to playful crocodiles.",
   access_transport:"Transportation options include hitching a ride on a passing zébu (strongly recommended).",
@@ -88,10 +88,10 @@ i3 = Island.create!(
 )
 #create island seychelles
 i4 = Island.create!(
-  name: "Rodrigue",
+  name: "Rodrigue 🇸🇨",
   latitude: -19.6744,
   longitude: 63.4321,
-  address: "Rodrigue",
+  address: "Anse Mourouk, Rodrigue",
   cul_diversity:"A linguistic mosaic where 'hello' is just the beginning of a conversation that might end with a sega dance-off.",
   geo_features:"From turquoise lagoons to rugged cliffs, Rodrigues is Mother Nature's way of showing off – just don't forget to bring your snorkel and your hiking boots.",
   access_transport:"Getting around Rodrigues is like playing 'The Amazing Race' – just hop on a bicycle and pedal like your life depends on it.",
@@ -101,10 +101,10 @@ i4 = Island.create!(
 )
 #create island comores
 i5 = Island.create!(
-  name: "Comores",
+  name: "Comores 🇰🇲",
   latitude: -11.645500,
   longitude: 43.333300,
-  address: "Comores",
+  address: "Dos du Dragon, Comores",
   cul_diversity:"A vibrant cultural heritage with a blend of African, Arab, and French influences, reflected in its architecture, cuisine, and music.",
   geo_features:"Explore volcanic islands, hidden beaches, and colorful coral reefs – just watch out for the occasional pirate ship.",
   access_transport:"Need a lift? Try hitching a ride on a passing dolphin (dolphin training not provided).",
@@ -114,10 +114,10 @@ i5 = Island.create!(
 )
 #create island mayotte
 i6 = Island.create!(
-  name: "Mayotte",
+  name: "Mayotte 🇾🇹",
   latitude: -12.827500,
   longitude: 45.166244,
-  address: "Mayotte",
+  address: "Mtsanga Fanou, Mayotte",
   cul_diversity:"Dive into the unique blend of French and Mahorian culture, where baguettes and coconut water are equally cherished.",
   geo_features:"Discover coral reefs, lagoons, and lush forests, where turtles and dolphins play hide and seek.",
   access_transport:"Transportation in Mayotte is a breeze – just ride the waves on a giant sea turtle (sea turtle rental not available).",
