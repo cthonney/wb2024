@@ -3,15 +3,16 @@
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content rounded-4">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="loginModalLabel">Modal title</h1>
+          <h1 class="modal-title fs-5" id="loginModalLabel">Ready to teleport to your dream destination? </h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          ...
+          Sign up or log in now to start your journey hassle-free! Create an account today for seamless booking.
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <button type="button" class="adv-btn">
+          <%= link_to "Access My Account", new_user_registration_path, class: "text-white" %>
+          </button>
         </div>
       </div>
     </div>

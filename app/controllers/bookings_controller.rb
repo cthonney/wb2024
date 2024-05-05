@@ -39,7 +39,8 @@ class BookingsController < ApplicationController
 
   # custom routes
   def payment
-
+    # Calculate the distance between the two islands
+    @distance = @booking.start_island.distance_to(@booking.end_island)
   end
 
   def show_qr

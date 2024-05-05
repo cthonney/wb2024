@@ -1,23 +1,21 @@
-<div class="container d-flex justify-content-center mt-5 mb-5" id="payment">
-  <div class="row g-3">
+<div class="d-flex justify-content-center mt-5 mb-5" id="payment">
+  <div class="row g-3 payment-box">
     <div class="col-md-6">
-      <span>Payment Method</span>
+      <h3 class="text-light">Payment Method</h3>
       <div class="card">
         <div class="accordion" id="accordionExample">
           <div class="card">
             <div class="card-header p-0" id="headingTwo">
               <h2 class="mb-0">
-                <button class="btn btn-light btn-block text-left collapsed p-3 rounded-0 border-bottom-custom" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                <button class="btn btn-light btn-block text-left collapsed p-3 rounded-0 border-bottom-custom w-100" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                   <div class="d-flex align-items-center justify-content-between">
-
                     <span>Paypal</span>
                     <img src="https://i.imgur.com/7kQEsHU.png" width="30">
-
                   </div>
                 </button>
               </h2>
             </div>
-            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
               <div class="card-body">
                 <input type="text" class="form-control" placeholder="Paypal email">
               </div>
@@ -27,7 +25,7 @@
           <div class="card">
             <div class="card-header p-0">
               <h2 class="mb-0">
-                <button class="btn btn-light btn-block text-left p-3 rounded-0" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <button class="btn btn-light btn-block text-left p-3 rounded-0 w-100" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                   <div class="d-flex align-items-center justify-content-between">
 
                     <span>Credit card</span>
@@ -43,7 +41,7 @@
               </h2>
             </div>
 
-            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
               <div class="card-body payment-card-body">
 
                 <span class="font-weight-normal card-text">Card Number</span>
@@ -97,7 +95,7 @@
     </div>
 
     <div class="col-md-6">
-        <span>Summary</span>
+        <h3 class="text-light">Summary</h3>
 
         <div class="card">
 
@@ -105,14 +103,17 @@
 
             <div class="d-flex flex-column">
 
-              <span>Pro(Billed Monthly) <i class="fa fa-caret-down"></i></span>
-              <a href="#" class="billing">Save 20% with annual billing</a>
+              <span>
+                <%= @booking.start_island.name %>
+                <i class="fas fa-arrow-right"></i>
+                <%= @booking.end_island.name %>
+              </span>
+              <a href="#" class="billing">Booking date: <%=  %></a>
 
             </div>
 
             <div class="mt-1">
-              <sup class="super-price">$9.99</sup>
-              <span class="super-month">/Month</span>
+              <sup class="super-price">$<%= @distance.round %></sup>
             </div>
 
           </div>
@@ -158,10 +159,15 @@
 
           <div class="p-3">
 
-          <button class="btn btn-primary btn-block free-button">Try it free for 30 days</button>
-          <div class="text-center">
-            <a href="#">Have a promo code?</a>
-          </div>
+            <div class="d-grid gap-2">
+                      <button class="btn btn-primary"
+                        data-controller="sweetalert"
+                        data-action="click->sweetalert#showAlert"
+                      >Try it free for 30 days</button>
+            </div>
+
+
+
 
           </div>
 

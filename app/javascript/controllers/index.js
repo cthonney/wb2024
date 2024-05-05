@@ -19,5 +19,8 @@ application.register("map", MapController)
 import MapSingleController from "./map_single_controller"
 application.register("map-single", MapSingleController)
 
+import SweetalertController from "./sweetalert_controller"
+application.register("sweetalert", SweetalertController)
+
 import ThreeController from "./three_controller"
 application.register("three", ThreeController)
