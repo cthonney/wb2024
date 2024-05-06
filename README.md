@@ -10,7 +10,7 @@ Our project is built using the following technologies:
 - Ruby on Rails 7.04
 - Ruby 3.1.4
 - Saasc Rails for integrates the C implementation of Sass, LibSass, into the asset pipeline.
-- Stimulus Rails for JavaScript with Webpack (Terser for Minimize(
+- Stimulus Rails for JavaScript with Webpack (Terser for Minimize)
 - Devise for login
 - Mapbox-gl for map
 - Sqlite3 for Database
